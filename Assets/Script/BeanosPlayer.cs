@@ -213,16 +213,7 @@ public class BeanosPlayer : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             deathToBeanos = true;
-
-           
         }
-
-
-
-
-
-
-
     }
 
 
@@ -238,50 +229,10 @@ public class BeanosPlayer : MonoBehaviour
         }
 
         //Poweruplongbeno
-        
         if (other.gameObject.layer == LONGBEANOS && !isSneaking)
         {
-
-            Debug.Log("HEJ!!!");
-            
             Destroy(other.gameObject);
-            
-            transform.localScale = Longbeanos;
-            
-            MakeNoise = true;
-            
-            Speed = Speed ++;
-            
-            Rightturnspeed = Rightturnspeed + 30;
-            
-            Leftturnspeed = Leftturnspeed - 30;
-            
-            isLongBeanosTrue = true;
-
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Interval = 10000;
-            aTimer.Elapsed += (object source, ElapsedEventArgs e) => {
-                 
-                 Debug.Log("1");
-                isLongBeanosTrue = false;
-                  Debug.Log("2");
-                 transform.localScale = Normalbeanos;
-                  Debug.Log("3");
-                 Speed = Speed --;
-                  Debug.Log("4");
-                Rightturnspeed = Rightturnspeed - 30;
-                   Debug.Log("5");
-                Leftturnspeed = Leftturnspeed + 30;
-                 Debug.Log("6");
-                 
-                 isLongBeanosTrue = false;
-
-                 Debug.Log("Finished waiting");
-
-                  aTimer.Dispose();
-            };
-            Debug.Log("Start waiting...");
-            aTimer.Start();
+            StartCoroutine(DoLongBeanos());
         }       
 
         if (other.gameObject.layer == 9)
@@ -305,5 +256,51 @@ public class BeanosPlayer : MonoBehaviour
             Leftturnspeed = -120;        
         }
 
+
+
+    }
+
+   IEnumerator DoLongBeanos()  //  <-  its a standalone method
+    {
+        Debug.Log("Long");
+        LongBeanos();
+        yield return new WaitForSeconds(3);
+        ReverseLongBeanos();
+        Debug.Log("Not long");
+    }
+
+
+    private void LongBeanos()
+    {
+        
+        transform.localScale = Longbeanos;
+        
+        MakeNoise = true;
+        
+        Speed = Speed ++;
+        
+        Rightturnspeed = Rightturnspeed + 30;
+        
+        Leftturnspeed = Leftturnspeed - 30;
+        
+        isLongBeanosTrue = true;
+    }
+
+    private void ReverseLongBeanos()
+    {
+        isLongBeanosTrue = false;
+        Debug.Log("2");
+        transform.localScale = Normalbeanos;
+        Debug.Log("3");
+        Speed = Speed --;
+        Debug.Log("4");
+        Rightturnspeed = Rightturnspeed - 30;
+        Debug.Log("5");
+        Leftturnspeed = Leftturnspeed + 30;
+        Debug.Log("6");
+        
+        isLongBeanosTrue = false;
+
+        Debug.Log("Finished waiting");
     }
 }
