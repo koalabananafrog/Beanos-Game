@@ -265,7 +265,7 @@ public class BeanosPlayer : MonoBehaviour
     {
         Debug.Log("Long");
         LongBeanos();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(20);
         ReverseLongBeanos();
         Debug.Log("Not long");
     }
@@ -273,7 +273,7 @@ public class BeanosPlayer : MonoBehaviour
 
     private void LongBeanos()
     {
-        Instantiate(Longbenopickupeffect);
+        Longbenopickupeffect.SetActive(true);
 
         transform.localScale = Longbeanos;
 
