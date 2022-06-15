@@ -241,6 +241,7 @@ public class BeanosPlayer : MonoBehaviour
         
         if (other.gameObject.layer == LONGBEANOS && !isSneaking)
         {
+
             Debug.Log("HEJ!!!");
             
             Destroy(other.gameObject);
