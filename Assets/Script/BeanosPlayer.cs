@@ -9,6 +9,8 @@ using System.Timers;
 public class BeanosPlayer : MonoBehaviour
 {
     private bool isLongBeanosTrue;
+
+    [SerializeField] private GameObject Longbenopickupeffect; 
     private float LongBenoDuration = 5f;
     public bool BenosIsLong;
     private bool longBeanosTime;

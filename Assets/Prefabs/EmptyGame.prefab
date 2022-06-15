@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189d0fd34976dda478ca860e37a5cd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Longbenopickupeffect: {fileID: 0}
   BenosIsLong: 0
   targetTime: 100
   LongBeno: {fileID: 0}
