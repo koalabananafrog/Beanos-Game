@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Search;
 using UnityEngine;
 using TMPro;
 using Unity.Audio;
@@ -8,7 +9,8 @@ using System.Timers;
 
 public class BeanosPlayer : MonoBehaviour
 {
-    private bool isLongBeanosTrue;
+    private bool Sneakblocker;
+    private float Jumppower = 5;
     public bool MakeLongBenoSound;
     public ScriptableObject CameraScript;
     [SerializeField] private GameObject Longbenopickupeffect; 
@@ -17,7 +19,6 @@ public class BeanosPlayer : MonoBehaviour
     private bool longBeanosTime;
     public float targetTime = 100.0f;
     private bool Dead;
-    private bool touchingJumpAbleObj;
     float smooth = 5.0f;
     float tiltAngle = 60.0f;
     private bool _ismoving;
@@ -44,8 +45,10 @@ public class BeanosPlayer : MonoBehaviour
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
     // Start is called before the first frame update
+    private Camera MainCamera;
     void Start()
     {
+        MainCamera = FindObjectOfType<Camera>();
         Rightturnspeed = 120;
         Leftturnspeed = -120;
         rigidbodycomponent = GetComponent<Rigidbody>();
@@ -85,7 +88,7 @@ public class BeanosPlayer : MonoBehaviour
 
         beanosCurrentState = transform.localScale;
 
-        if (Input.GetKey(KeyCode.S) && !isSneaking && !isLongBeanosTrue || Input.GetKey(KeyCode.DownArrow) && !isSneaking && !isLongBeanosTrue){
+        if (Input.GetKey(KeyCode.S) && !isSneaking && !Sneakblocker || Input.GetKey(KeyCode.DownArrow) && !isSneaking && !Sneakblocker){
             // Start sneaking
             transform.localScale = Sneakingbeanos;
             Speed = 2.5f;
@@ -124,7 +127,7 @@ public class BeanosPlayer : MonoBehaviour
             return;
         }
         
-        if (isLongBeanosTrue == false){
+        if (Sneakblocker == false){
             Debug.Log("it's false maaaaaan");
         }
     }
@@ -134,7 +137,7 @@ public class BeanosPlayer : MonoBehaviour
     {
         if (jumpkeywaspressed == true && !isSneaking)
         {
-            rigidbodycomponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
+            rigidbodycomponent.AddForce(Vector3.up * Jumppower, ForceMode.VelocityChange);
 
             jumpkeywaspressed = false;
         }
@@ -218,22 +221,79 @@ public class BeanosPlayer : MonoBehaviour
     {
         Instantiate(Longbenopickupeffect, transform.position, transform.rotation);
 
-        AudioSource.PlayClipAtPoint(LongBenoSound, transform.position);
+        Debug.Log(MainCamera);
+        AudioSource.PlayClipAtPoint(LongBenoSound, MainCamera.transform.position);
         transform.localScale = Longbeanos;
         MakeNoise = true;
         Speed = Speed ++;
         Rightturnspeed = Rightturnspeed + 30;
         Leftturnspeed = Leftturnspeed - 30;
-        isLongBeanosTrue = true;
+        Sneakblocker = true;
+        Jumppower = Jumppower * 1.5f;   
     }
 
     private void ReverseLongBeanos()
     {
-        isLongBeanosTrue = false;
+        Sneakblocker = false;
         transform.localScale = Normalbeanos;
         Speed = Speed --;
         Rightturnspeed = Rightturnspeed - 30;
         Leftturnspeed = Leftturnspeed + 30;
-        isLongBeanosTrue = false;
+        Sneakblocker = false;
+        Jumppower = Jumppower / 1.5f;   
     }
+
+    
+    // public static int _POWERUPNAME_ = ?;
+    
+    
+    //  if (other.gameObject.layer == _POWERUPNAME && !isSneaking)
+    //     {
+    //         Destroy(other.gameObject);
+    //         StartCoroutine(Do_POWERUPNAME_());
+    //     }     
+
+//      int beanosLongCount = 0;
+
+//    IEnumerator Do_POWERUPNAME()  //  <-  its a standalone method
+//     {
+//         Set_POWERUPNAME_();
+//         _POWERUPNAME_Count = 1;
+//         yield return new WaitForSeconds(?);
+//         _POWERUPNAME_Count -= 1;
+//         if(_POWERUPNAME_Count == 0) {
+//             Unset_POWERUPNAME_();
+//         }
+//     }
+
+
+//     private void Set_POWERUPNAME_()
+//     {
+//         Instantiate(_POWERUPNAME_upeffect, transform.position, transform.rotation);
+//         AudioSource.PlayClipAtPoint(_POWERUPNAME_Sound, MainCamera.transform.position);
+//         transform.localScale = _POWERUPNAME_beanos;
+//         Speed = Speed + ?;
+//         Rightturnspeed = Rightturnspeed + ?;
+//         Leftturnspeed = Leftturnspeed - ?;
+//         Sneakblocker = _TRUE OR FALSE_;
+//         Jumppower = Jumppower * ?;   
+//     }
+
+//     private void Unset_POWERUPNAME_()
+//     {
+//         Sneakblocker = false;
+//         transform.localScale = Normalbeanos;
+//         Speed = Speed ?reverse?;
+//         Rightturnspeed = Rightturnspeed ?reverse?;
+//         Leftturnspeed = Leftturnspeed ?reverse?;
+//         Sneakblocker = false;
+//         Jumppower = Jumppower ?reverse?;   
+//     }  
+
+
+
+
+
+
+
 }

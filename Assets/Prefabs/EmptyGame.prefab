@@ -215,7 +215,7 @@ MonoBehaviour:
   Longbenopickupeffect: {fileID: 4965950572003843, guid: 6dc59e9a7db6cff439020f0703872992, type: 3}
   BenosIsLong: 0
   targetTime: 100
-  LongBenoSound: {fileID: 8300000, guid: 1c0d3b59929952e459a837c7366c8b6c, type: 3}
+  LongBenoSound: {fileID: 8300000, guid: 848e97bcd9288d44f9aba5d69f2aad15, type: 3}
   jumpSound: {fileID: 0}
   RespawnMenu: {fileID: 2948519758058194901}
 --- !u!4 &8528490108383882350 stripped
