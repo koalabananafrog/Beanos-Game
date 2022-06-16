@@ -1050,7 +1050,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 425418462576776644, guid: 9f49adf526a2ef740901113ce669527c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 425418462576776644, guid: 9f49adf526a2ef740901113ce669527c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1107,6 +1107,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2156999810618694326, guid: 2ac96cdf3c54be5499f7e56a31e0bb92, type: 3}
+      propertyPath: LongBeno
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156999810618694326, guid: 2ac96cdf3c54be5499f7e56a31e0bb92, type: 3}
+      propertyPath: LongBenoSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 848e97bcd9288d44f9aba5d69f2aad15, type: 3}
     - target: {fileID: 2832153866103565391, guid: 2ac96cdf3c54be5499f7e56a31e0bb92, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1155,6 +1163,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmptyGame
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4903762394132000158, guid: 2ac96cdf3c54be5499f7e56a31e0bb92, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac96cdf3c54be5499f7e56a31e0bb92, type: 3}

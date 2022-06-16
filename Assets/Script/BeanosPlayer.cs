@@ -22,8 +22,8 @@ public class BeanosPlayer : MonoBehaviour
     private float Leftturnspeed;
     private float Rightturnspeed;
     private float Speed;
-    [SerializeField] private AudioSource LongBeno;
-    public AudioSource jumpSound;
+    [SerializeField] private AudioClip LongBenoSound;
+    public AudioClip jumpSound;
     private bool MakeNoise;
     private Vector3 Longbeanos;
     private Vector3 sneakingLongbeanos;
@@ -274,6 +274,8 @@ public class BeanosPlayer : MonoBehaviour
     private void LongBeanos()
     {
         Longbenopickupeffect.SetActive(true);
+
+        AudioSource.PlayClipAtPoint(LongBenoSound, transform.position);
 
         transform.localScale = Longbeanos;
 

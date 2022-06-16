@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5273959745591226738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.462685, y: 51.90399, z: -107.6597}
+  m_LocalPosition: {x: 49.46318, y: 16.926067, z: -24.087034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 105.2778
+      value: 104.634
       objectReference: {fileID: 0}
     - target: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
       propertyPath: m_LocalRotation.w
@@ -306,7 +306,7 @@ MonoBehaviour:
   Longbenopickupeffect: {fileID: 4340782889821791498}
   BenosIsLong: 0
   targetTime: 100
-  LongBeno: {fileID: 0}
+  LongBenoSound: {fileID: 0}
   jumpSound: {fileID: 0}
   RespawnMenu: {fileID: 2948519758058194901}
 --- !u!4 &8528490108383882350 stripped
@@ -399,6 +399,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4965950572003843, guid: 6dc59e9a7db6cff439020f0703872992, type: 3}
   m_PrefabInstance: {fileID: 4335888418412881673}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3820192674147401444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4340782889821791498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0472db6ef3ce444b3947ca1d957b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 8528490108383882350}
+  Smoothness: 1
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &4555524181694695877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -487,7 +502,7 @@ PrefabInstance:
     - target: {fileID: 7546196700993602440, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 8f8ca9ab7b45bfc4a894aade038faf9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 16f6c0e169c578744ba618dc82521bdb, type: 3}
     - target: {fileID: 7546196700993602441, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
       propertyPath: Target
       value: 
