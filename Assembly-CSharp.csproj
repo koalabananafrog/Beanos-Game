@@ -53,10 +53,10 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
      <Compile Include="Assets\ChallengeAssets\ChallengeResources\Scripts\Kart\EmitParticlesOnKartBounce.cs" />
      <Compile Include="Assets\Script\BenoRotation.cs" />
+     <Compile Include="Assets\Script\LongBenoPickUPEFFECTFOLLOW.cs" />
      <Compile Include="Assets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Script\BeanosPlayer.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Script\LongBenoPickUPEFFECTFOLLOW.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -721,6 +721,9 @@
     <Reference Include="UnityEngine.Advertisements">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -742,6 +745,9 @@
     <Reference Include="UnityEngine.Purchasing.SecurityCore">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Purchasing.Codeless">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
     </Reference>
@@ -759,12 +765,6 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
