@@ -47,13 +47,11 @@
      <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
-     <Compile Include="Assets\Script\LongBenoPlop.cs" />
      <Compile Include="Assets\Script\CameraScript.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
      <Compile Include="Assets\ChallengeAssets\ChallengeResources\Scripts\Kart\EmitParticlesOnKartBounce.cs" />
      <Compile Include="Assets\Script\BenoRotation.cs" />
-     <Compile Include="Assets\Script\LongBenoPickUPEFFECTFOLLOW.cs" />
      <Compile Include="Assets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Script\BeanosPlayer.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />

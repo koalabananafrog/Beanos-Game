@@ -9,6 +9,8 @@ using System.Timers;
 public class BeanosPlayer : MonoBehaviour
 {
     private bool isLongBeanosTrue;
+    public bool MakeLongBenoSound;
+    public ScriptableObject CameraScript;
     [SerializeField] private GameObject Longbenopickupeffect; 
     private float LongBenoDuration = 5f;
     public bool BenosIsLong;
@@ -33,7 +35,6 @@ public class BeanosPlayer : MonoBehaviour
     private Vector3 Sneakingbeanos;
     private float Coins;
     private bool deathToBeanos;
-
     private bool isSneaking;
     [SerializeField] private GameObject RespawnMenu;
     private bool Ddown;
@@ -45,23 +46,14 @@ public class BeanosPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         Rightturnspeed = 120;
-        
         Leftturnspeed = -120;
-        
         rigidbodycomponent = GetComponent<Rigidbody>();
-        
         Speed = 2;
-        
         Longbeanos = new Vector3(2, 2.8f, 2);
-        
         Sneakingbeanos = new Vector3(1, 0.6f, 1);
-        
         Normalbeanos = new Vector3(1, 1, 1);
-        
         deadBeanos = new Vector3(0.9f, 0.2f, 1);
-        
         sneakingLongbeanos = new Vector3(2, 2.4f, 2);
     }
 
@@ -70,11 +62,6 @@ public class BeanosPlayer : MonoBehaviour
     {
         //Input control
         
- 
-        
-
-       
-
         if(Dead){
             return;
         }
@@ -84,7 +71,6 @@ public class BeanosPlayer : MonoBehaviour
         Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
         transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
         beanosCanJump = false;
-       
         }
         
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
@@ -105,21 +91,13 @@ public class BeanosPlayer : MonoBehaviour
             Speed = 2.5f;
             isSneaking = true; 
         } 
-   
 
-        
         if (!Input.GetKey(KeyCode.S) && isSneaking || Input.GetKey(KeyCode.DownArrow) && isSneaking) {
             // Rise up
             transform.localScale = Normalbeanos;
             isSneaking = false; 
         }
        
-        if (MakeNoise == true)
-        {
-           
-        }
-        
-        
         
         if(deathToBeanos == true)
         {
@@ -132,8 +110,6 @@ public class BeanosPlayer : MonoBehaviour
         }
 
 
-
-
         horizontalinput = Input.GetAxis("Horizontal") * Speed;
         
         
@@ -141,9 +117,6 @@ public class BeanosPlayer : MonoBehaviour
         {
             jumpkeywaspressed = true;
             beanosCanJump = false;
-            ;
-  
-
         }
 
         if (_ismoving == false)
@@ -151,33 +124,12 @@ public class BeanosPlayer : MonoBehaviour
             return;
         }
         
-            
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-           // Ddown = true;
-        //}
-
-  
-
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-            //Adown = true;
-        //}
-
         if (isLongBeanosTrue == false){
             Debug.Log("it's false maaaaaan");
         }
-        
-
-    
-        
- 
- 
-
-
-
-
     }
+    
+    
     private void FixedUpdate()
     {
         if (jumpkeywaspressed == true && !isSneaking)
@@ -185,25 +137,13 @@ public class BeanosPlayer : MonoBehaviour
             rigidbodycomponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
 
             jumpkeywaspressed = false;
-            
-        
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
-
-        
-
-
-
-        
-        
-
-        
-        //RotationCheck
-       
-
     }
-     
-
+    
+    
+    
+    //COLLISION STATION!
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == 3)
@@ -217,7 +157,6 @@ public class BeanosPlayer : MonoBehaviour
         }
     }
 
-
     public static int LONGBEANOS = 8;
 
     private void OnTriggerEnter(Collider other)
@@ -226,7 +165,6 @@ public class BeanosPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
             Coins++;
-
         }
 
         //Poweruplongbeno
@@ -244,7 +182,6 @@ public class BeanosPlayer : MonoBehaviour
             Speed = 4;
             Rightturnspeed = 10000;
             Leftturnspeed = -10000;
-
         }
 
         if (other.gameObject.layer == 10)
@@ -261,51 +198,42 @@ public class BeanosPlayer : MonoBehaviour
 
     }
 
+    int beanosLongCount = 0;
+
    IEnumerator DoLongBeanos()  //  <-  its a standalone method
     {
         Debug.Log("Long");
         LongBeanos();
+        beanosLongCount = 1;
         yield return new WaitForSeconds(20);
-        ReverseLongBeanos();
+        beanosLongCount -= 1;
+        if(beanosLongCount == 0) {
+            ReverseLongBeanos();
+        }
         Debug.Log("Not long");
     }
 
 
     private void LongBeanos()
     {
-        Longbenopickupeffect.SetActive(true);
+        Instantiate(Longbenopickupeffect, transform.position, transform.rotation);
 
         AudioSource.PlayClipAtPoint(LongBenoSound, transform.position);
-
         transform.localScale = Longbeanos;
-
-        
         MakeNoise = true;
-        
         Speed = Speed ++;
-        
         Rightturnspeed = Rightturnspeed + 30;
-        
         Leftturnspeed = Leftturnspeed - 30;
-        
         isLongBeanosTrue = true;
     }
 
     private void ReverseLongBeanos()
     {
         isLongBeanosTrue = false;
-        Debug.Log("2");
         transform.localScale = Normalbeanos;
-        Debug.Log("3");
         Speed = Speed --;
-        Debug.Log("4");
         Rightturnspeed = Rightturnspeed - 30;
-        Debug.Log("5");
         Leftturnspeed = Leftturnspeed + 30;
-        Debug.Log("6");
-        
         isLongBeanosTrue = false;
-
-        Debug.Log("Finished waiting");
     }
 }
