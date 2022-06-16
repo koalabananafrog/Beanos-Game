@@ -130,6 +130,8 @@ public class BeanosPlayer : MonoBehaviour
         if (Sneakblocker == false){
             Debug.Log("it's false maaaaaan");
         }
+
+       
     }
     
     
@@ -161,13 +163,15 @@ public class BeanosPlayer : MonoBehaviour
     }
 
     public static int LONGBEANOS = 8;
+    public static int COIN = 7;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 7)
+        if (other.gameObject.layer == COIN)
         {
             Destroy(other.gameObject);
             Coins++;
+            Debug.Log(Coins);
         }
 
         //Poweruplongbeno

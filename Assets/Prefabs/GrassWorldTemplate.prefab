@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317821932237663499}
   m_Layer: 0
-  m_Name: EmptyGame
+  m_Name: GrassWorldTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
