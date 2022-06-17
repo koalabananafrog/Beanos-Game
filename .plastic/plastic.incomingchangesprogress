@@ -1,0 +1,20 @@
+[
+  {
+    "MountId": "56e62dd7-241f-41e9-8c6b-dd4ca4513e62",
+    "AncestorCsetIds": [
+      112
+    ],
+    "SourceCsetId": 113,
+    "DestinationCsetId": 112,
+    "FileConflicts": [
+      {
+        "Path": "/Assets/Script/BeanosPlayer.cs",
+        "ItemId": 371,
+        "ParentItemId": 326,
+        "BaseRevId": 2206,
+        "SourceRevId": 2222,
+        "DestinationRevId": 2206
+      }
+    ]
+  }
+]
