@@ -40,7 +40,9 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
      <Compile Include="Assets\Script\MainMenuController.cs" />
      <Compile Include="Assets\Script\BeanosAudioManager.cs" />
+     <Compile Include="Assets\Script\FatBenoRotation.cs" />
      <Compile Include="Assets\scrip.cs" />
+     <Compile Include="Assets\Script\PowerUps.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\Script\RespawnMenu.cs" />
      <Compile Include="Assets\ChallengeAssets\ChallengeResources\Scripts\BallGame\EmitParticlesOnBallBounce.cs" />

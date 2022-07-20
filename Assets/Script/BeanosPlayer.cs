@@ -5,11 +5,13 @@ using UnityEngine;
 using TMPro;
 using Unity.Audio;
 using System;
-using System.Timers; 
+using System.Timers;
+//using PowerUps;
 
 public class BeanosPlayer : MonoBehaviour
 {
     private bool Sneakblocker;
+    private Vector3 FatBenobeanos;
     private float Jumppower = 5;
     public bool MakeLongBenoSound;
     public ScriptableObject CameraScript;
@@ -58,6 +60,7 @@ public class BeanosPlayer : MonoBehaviour
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(0.9f, 0.2f, 1);
         sneakingLongbeanos = new Vector3(2, 2.4f, 2);
+        FatBenobeanos = new Vector3(2, 1, 2.2f);
     }
 
     // Update is called once per frame
@@ -164,6 +167,7 @@ public class BeanosPlayer : MonoBehaviour
 
     public static int LONGBEANOS = 8;
     public static int COIN = 7;
+    public static int FatBeno = 9;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -174,22 +178,18 @@ public class BeanosPlayer : MonoBehaviour
             Debug.Log(Coins);
         }
 
+
+        //if(other.gameObject is PowerUp) {
+        //    PowerUp powerUp = (PowerUp) other.gameObject;
+        //    powerUp.DoPowerUp();
+        //}
+
         //Poweruplongbeno
         if (other.gameObject.layer == LONGBEANOS && !isSneaking)
         {
             Destroy(other.gameObject);
             StartCoroutine(DoLongBeanos());
         }       
-
-        if (other.gameObject.layer == 9)
-        {
-            Destroy(other.gameObject);
-            // transform.localScale = Faaaaaaastbeanos;
-            MakeNoise = true;
-            Speed = 4;
-            Rightturnspeed = 10000;
-            Leftturnspeed = -10000;
-        }
 
         if (other.gameObject.layer == 10)
         {
@@ -200,6 +200,12 @@ public class BeanosPlayer : MonoBehaviour
             Rightturnspeed = 120;
             Leftturnspeed = -120;        
         }
+        if (other.gameObject.layer == FatBeno && !isSneaking)
+        {
+            Destroy(other.gameObject);
+            StartCoroutine(DoFatBeno());
+        }     
+
 
 
 
@@ -225,7 +231,7 @@ public class BeanosPlayer : MonoBehaviour
     {
         Instantiate(Longbenopickupeffect, transform.position, transform.rotation);
 
-        Debug.Log(MainCamera);
+        // Debug.Log(MainCamera);
         AudioSource.PlayClipAtPoint(LongBenoSound, MainCamera.transform.position);
         transform.localScale = Longbeanos;
         MakeNoise = true;
@@ -248,16 +254,62 @@ public class BeanosPlayer : MonoBehaviour
     }
 
     
-    // public static int _POWERUPNAME_ = ?;
-    
-    
-    //  if (other.gameObject.layer == _POWERUPNAME && !isSneaking)
-    //     {
-    //         Destroy(other.gameObject);
-    //         StartCoroutine(Do_POWERUPNAME_());
-    //     }     
 
-//      int beanosLongCount = 0;
+    
+    
+     
+
+
+
+
+
+
+
+    int FatBenoCount = 0;
+
+   IEnumerator DoFatBeno()  //  <-  its a standalone method
+    {
+        SetFatBeno();
+        FatBenoCount = 1;
+        yield return new WaitForSeconds(15);
+        FatBenoCount -= 1;
+        if(FatBenoCount == 0) {
+            UnsetFatBeno();
+        }
+    }
+
+
+    private void SetFatBeno()
+    {
+        transform.localScale = FatBenobeanos;
+        Speed = Speed + 2;
+        Rightturnspeed = Rightturnspeed + 10;
+        Leftturnspeed = Leftturnspeed - 10;
+        Sneakblocker = true;
+        Jumppower = Jumppower * 1.5F;   
+    }
+
+    private void UnsetFatBeno()
+    {
+        Sneakblocker = false;
+        transform.localScale = Normalbeanos;
+        Speed = Speed - 2;
+        Rightturnspeed = Rightturnspeed -10;
+        Leftturnspeed = Rightturnspeed +10;
+        Sneakblocker = false;
+        Jumppower = Jumppower / 1.5f;   
+    }   
+    
+
+
+
+
+
+
+
+
+
+//      int _POWERUPNAME_Count = 0;
 
 //    IEnumerator Do_POWERUPNAME()  //  <-  its a standalone method
 //     {
@@ -292,7 +344,9 @@ public class BeanosPlayer : MonoBehaviour
 //         Leftturnspeed = Leftturnspeed ?reverse?;
 //         Sneakblocker = false;
 //         Jumppower = Jumppower ?reverse?;   
-//     }  
+//     }
+
+    
 
 
 
