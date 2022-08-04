@@ -36,26 +36,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\BeanosAudioManager.cs" />
-     <Compile Include="Assets\Script\FatBenoRotation.cs" />
-     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
-     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
-     <Compile Include="Assets\Script\CameraScript.cs" />
-     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
-     <Compile Include="Assets\Script\BeanosPlayer.cs" />
+    <Analyzer Include="C:\Users\neore\Beenos1\Assets\AssetStoreAssets\EffectExamples\Editor\PackageManagerAssembly\PackageManagerAssembly.dll" />
+  </ItemGroup>
+  <ItemGroup>
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
      <Compile Include="Assets\Script\MainMenuController.cs" />
-     <Compile Include="Assets\Script\FinishLineScript.cs" />
+     <Compile Include="Assets\Script\BeanosAudioManager.cs" />
+     <Compile Include="Assets\Script\FatBenoRotation.cs" />
+     <Compile Include="Assets\Script\FisnishLineScript.cs" />
      <Compile Include="Assets\Script\PowerUps.cs" />
+     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\Script\RespawnMenu.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\BallGame\EmitParticlesOnBallBounce.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
+     <Compile Include="Assets\Script\CameraScript.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunShoot.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Kart\EmitParticlesOnKartBounce.cs" />
      <Compile Include="Assets\Script\BenoRotation.cs" />
+     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
+     <Compile Include="Assets\Script\BeanosPlayer.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
      <None Include="Assets\AssetStoreAssets\PixelBlocksArt\Low_Poly_Pixel_2D_Blocks_DevilsWorkShop_v04\License.txt" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -326,21 +329,6 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\Program Files\Unity 2022.1.0f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Unsafe">
-        <HintPath>C:\Users\neore\Beenos1\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Cecil.Mdb">
-        <HintPath>C:\Users\neore\Beenos1\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-        <HintPath>C:\Users\neore\Beenos1\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Cecil">
-        <HintPath>C:\Users\neore\Beenos1\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Cecil.Rocks">
-        <HintPath>C:\Users\neore\Beenos1\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>C:\Users\neore\Beenos1\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
@@ -723,47 +711,8 @@
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Purchasing.SecurityStub">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing.Codeless">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Runtime">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -771,50 +720,47 @@
     <Reference Include="Unity.TextMeshPro">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.Purchasing.SecurityStub">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.Advertisements">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    <Reference Include="UnityEngine.Purchasing.SecurityCore">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Purchasing.SecurityCore">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
+    <Reference Include="UnityEngine.Purchasing.Codeless">
+        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Environments">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing.Stores">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll</HintPath>
@@ -824,9 +770,6 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
         <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-        <HintPath>C:\Users\neore\Beenos1\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
