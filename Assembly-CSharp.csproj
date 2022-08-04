@@ -36,9 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\neore\Beenos1\Assets\AssetStoreAssets\EffectExamples\Editor\PackageManagerAssembly\PackageManagerAssembly.dll" />
-  </ItemGroup>
-  <ItemGroup>
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
      <Compile Include="Assets\Script\MainMenuController.cs" />
