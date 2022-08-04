@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1111908061288639773}
   - component: {fileID: 511021250448183997}
   - component: {fileID: 6116829846515904402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3324797305487573050}
   - component: {fileID: 1805530982124525749}
   - component: {fileID: 4195256980350684690}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beanos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 6089000116907022980}
   - component: {fileID: 1216985537204655662}
   - component: {fileID: 2793071747459813266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
