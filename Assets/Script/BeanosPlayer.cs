@@ -11,6 +11,10 @@ using System.Timers;
 public class BeanosPlayer : MonoBehaviour
 {
     private bool Sneakblocker;
+
+    private bool JumpRequest;
+
+    private bool beanosCouldJumpBefore;
     private Vector3 FatBenobeanos;
     private float Jumppower = 5;
     public bool MakeLongBenoSound;
@@ -71,13 +75,20 @@ public class BeanosPlayer : MonoBehaviour
         if(Dead){
             return;
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)){
         float tiltAroundZ = 0 * tiltAngle;
         float tiltAroundX = 0 * tiltAngle;
         Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
         transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
         beanosCanJump = false;
         }
+
+        
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)){
+            JumpRequest = true;
+        }
+        if(JumpRequest == true)
+
         
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -124,17 +135,6 @@ public class BeanosPlayer : MonoBehaviour
             jumpkeywaspressed = true;
             beanosCanJump = false;
         }
-
-        if (_ismoving == false)
-        {
-            return;
-        }
-        
-        if (Sneakblocker == false){
-            Debug.Log("it's false maaaaaan");
-        }
-
-       
     }
     
     
@@ -157,6 +157,7 @@ public class BeanosPlayer : MonoBehaviour
         if(collision.gameObject.layer == 3)
         {
             beanosCanJump = true;
+            beanosCouldJumpBefore = true;
         }
 
         if (collision.gameObject.layer == 6)
