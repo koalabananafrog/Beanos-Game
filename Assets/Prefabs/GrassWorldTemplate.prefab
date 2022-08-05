@@ -110,6 +110,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1317821932237663499}
     m_Modifications:
+    - target: {fileID: 4009617325685873418, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -171,8 +175,16 @@ PrefabInstance:
       value: Beanos
       objectReference: {fileID: 0}
     - target: {fileID: 6697422628532823632, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697422628532823632, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665951535227562119, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

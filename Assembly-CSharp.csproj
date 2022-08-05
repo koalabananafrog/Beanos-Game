@@ -41,7 +41,7 @@
      <Compile Include="Assets\Script\MainMenuController.cs" />
      <Compile Include="Assets\Script\BeanosAudioManager.cs" />
      <Compile Include="Assets\Script\FatBenoRotation.cs" />
-     <Compile Include="Assets\Script\FisnishLineScript.cs" />
+     <Compile Include="Assets\Script\FinishLineScript.cs" />
      <Compile Include="Assets\Script\PowerUps.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\Script\RespawnMenu.cs" />
