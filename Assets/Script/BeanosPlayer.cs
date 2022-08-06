@@ -11,6 +11,7 @@ using System.Timers;
 public class BeanosPlayer : MonoBehaviour
 {
     private bool Sneakblocker;
+    private bool JumpRequestAllowed;
 
     private bool JumpRequest;
 
@@ -75,7 +76,7 @@ public class BeanosPlayer : MonoBehaviour
         if(Dead){
             return;
         }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)){
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
         float tiltAroundZ = 0 * tiltAngle;
         float tiltAroundX = 0 * tiltAngle;
         Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
@@ -84,10 +85,15 @@ public class BeanosPlayer : MonoBehaviour
         }
 
         
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)){
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) && beanosCanJump == true){
             JumpRequest = true;
         }
-        if(JumpRequest == true)
+        if(JumpRequest == true){
+            if(beanosCouldJumpBefore == true){
+                beanosCanJump = true;
+            }
+            JumpRequest = false;
+        }
 
         
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
