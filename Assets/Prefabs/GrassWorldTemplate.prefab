@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewCamera: {fileID: 2948519759753800180}
-  CollisionUpdater: {fileID: 0}
   MakeLongBenoSound: 0
   CameraScript: {fileID: 0}
   Longbenopickupeffect: {fileID: 4965950572003843, guid: 6dc59e9a7db6cff439020f0703872992, type: 3}

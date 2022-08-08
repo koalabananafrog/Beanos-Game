@@ -22,7 +22,7 @@ public class BeanosPlayer : MonoBehaviour
     private bool JumpRequestAllowed;
     private bool stabilizing;
     private bool JumpRequest;
-    private bool beanosIsGrounded;
+    private int beanosGrounds;
     private bool beanosCouldJumpBefore;
     private Vector3 FatBenobeanos;
     private float Jumppower = 5;
@@ -54,7 +54,7 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private GameObject RespawnMenu;
     private bool Ddown;
     private bool Adown;
-    private bool beanosCanJump = true;
+    private bool beanosCanJump;
     private bool jumpKeyWasPressed;
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
@@ -92,6 +92,9 @@ public class BeanosPlayer : MonoBehaviour
             Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
             transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
             stabilizing = true;
+        }
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
+            stabilizing = false;
         }
 
 
@@ -134,43 +137,25 @@ public class BeanosPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true)
         {      
              beanosShallJump = true;
-             Debug.Log("HOHO");
         }
 
         // Checking if beanos is (allowed) to jump
-        if (beanosIsGrounded == true)// && !sneaking || !stabilizing)
+        if (beanosGrounds > 0 && !sneaking && !stabilizing)
         {
             beanosCanJump = true;
-            Debug.Log("HA");
         } 
-        if (beanosIsGrounded == false)// && !sneaking || !stabilizing)
-        {
+        else{
             beanosCanJump = false;
-            Debug.Log("HA");
         }
-
-        if(beanosCanJump == false){
-            Debug.Log("heynot");
-        }
-        if(beanosCanJump == true){
-            Debug.Log("hey");
-        }
-        if(beanosIsGrounded == false){
-            Debug.Log("False");
-        } 
-        if(beanosIsGrounded == true){
-            Debug.Log("True");
-        }
-
     }
     
     
     private void FixedUpdate()
-    {
+    {   
+        // jump Force Add
         if (beanosShallJump == true)
         {
             rigidbodycomponent.AddForce(Vector3.up * Jumppower, ForceMode.VelocityChange);
-            Debug.Log("!!!");
             beanosShallJump = false;
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
@@ -183,8 +168,8 @@ public class BeanosPlayer : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            beanosIsGrounded = true;
-            Debug.Log("HAHAH");
+            beanosGrounds = beanosGrounds + 1;
+            Debug.Log(beanosGrounds);
         }
 
         if (collision.gameObject.layer == 6)
@@ -196,8 +181,8 @@ public class BeanosPlayer : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            beanosIsGrounded = false;
-            Debug.Log("Exit!");
+            beanosGrounds = beanosGrounds - 1;
+            Debug.Log(beanosGrounds);
         }
     }
 
