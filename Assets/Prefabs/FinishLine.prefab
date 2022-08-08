@@ -111,6 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Confetti: {fileID: 1000011945391522, guid: d2be3440f5fc09f41a958c4fd991edfb, type: 3}
+  BeanosTree: {fileID: 2222111361404534124, guid: 2bdaaa8ee720c6e4baec4f6f68a33f44, type: 3}
+  YoungBeanosTree: {fileID: 3850060001420273748, guid: 32afad8594c867b42b108082b79a03f2, type: 3}
+  BabyBeanosTree: {fileID: 4371640868677050545, guid: 57e07e36fc434174e8561a59f656e62d, type: 3}
+  FetusBeanosTree: {fileID: 1241544484753972144, guid: b604b2146449092498d80b668ebf61a4, type: 3}
 --- !u!1 &5470435141898260169
 GameObject:
   m_ObjectHideFlags: 0

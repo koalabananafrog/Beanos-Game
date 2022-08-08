@@ -8,13 +8,21 @@ using System;
 using System.Timers;
 //using PowerUps;
 
+public enum Command {
+    moveForward,
+    moveBackward,
+    jump,
+} 
+
 public class BeanosPlayer : MonoBehaviour
 {
-    private bool Sneakblocker;
+    public CameraScript NewCamera; 
+    private bool beanosShallJump;
+    private bool sneakBlocker;
     private bool JumpRequestAllowed;
-
+    private bool stabilizing;
     private bool JumpRequest;
-
+    private bool beanosIsGrounded;
     private bool beanosCouldJumpBefore;
     private Vector3 FatBenobeanos;
     private float Jumppower = 5;
@@ -37,18 +45,17 @@ public class BeanosPlayer : MonoBehaviour
     private bool MakeNoise;
     private Vector3 Longbeanos;
     private Vector3 sneakingLongbeanos;
-    private Vector3 beanosCurrentState;
     private Vector3 deadBeanos;
     private Vector3 Normalbeanos;
     private Vector3 Sneakingbeanos;
     private float Coins;
     private bool deathToBeanos;
-    private bool isSneaking;
+    private bool sneaking;
     [SerializeField] private GameObject RespawnMenu;
     private bool Ddown;
     private bool Adown;
     private bool beanosCanJump = true;
-    private bool jumpkeywaspressed;
+    private bool jumpKeyWasPressed;
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
     // Start is called before the first frame update
@@ -71,86 +78,100 @@ public class BeanosPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Input control
+        //Input controlcenter
         
         if(Dead){
             return;
         }
+
+
+        // Stabilize
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
-        float tiltAroundZ = 0 * tiltAngle;
-        float tiltAroundX = 0 * tiltAngle;
-        Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
-        beanosCanJump = false;
+            float tiltAroundZ = 0 * tiltAngle;
+            float tiltAroundX = 0 * tiltAngle;
+            Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
+            stabilizing = true;
         }
 
-        
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) && beanosCanJump == true){
-            JumpRequest = true;
-        }
-        if(JumpRequest == true){
-            if(beanosCouldJumpBefore == true){
-                beanosCanJump = true;
-            }
-            JumpRequest = false;
-        }
 
-        
+
+        // Move right
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(new Vector3(transform.rotation.x + Rightturnspeed, 0, 0) * Time.deltaTime);
         }
-
+        // Move left
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(new Vector3(transform.rotation.x + Leftturnspeed, 0, 0) * Time.deltaTime);
         }
 
-        beanosCurrentState = transform.localScale;
 
-        if (Input.GetKey(KeyCode.S) && !isSneaking && !Sneakblocker || Input.GetKey(KeyCode.DownArrow) && !isSneaking && !Sneakblocker){
-            // Start sneaking
+        // Sneak down
+        if (Input.GetKey(KeyCode.S) && !sneaking && !sneakBlocker || Input.GetKey(KeyCode.DownArrow) && !sneaking && !sneakBlocker){
             transform.localScale = Sneakingbeanos;
             Speed = 2.5f;
-            isSneaking = true; 
+            sneaking = true; 
         } 
-
-        if (!Input.GetKey(KeyCode.S) && isSneaking || Input.GetKey(KeyCode.DownArrow) && isSneaking) {
-            // Rise up
+        // Sneak up
+        if (!Input.GetKey(KeyCode.S) && sneaking || Input.GetKey(KeyCode.DownArrow) && sneaking) {
             transform.localScale = Normalbeanos;
-            isSneaking = false; 
+            sneaking = false; 
         }
+
        
-        
+        // Death void detection
         if(deathToBeanos == true)
         {
             RespawnMenu.SetActive(true);
             Dead = true;
             transform.localScale = deadBeanos;
         }
-        if(Dead){
-            return;
-        }
-
 
         horizontalinput = Input.GetAxis("Horizontal") * Speed;
         
-        
         if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true)
-        {
-            jumpkeywaspressed = true;
-            beanosCanJump = false;
+        {      
+             beanosShallJump = true;
+             Debug.Log("HOHO");
         }
+
+        // Checking if beanos is (allowed) to jump
+        if (beanosIsGrounded == true)// && !sneaking || !stabilizing)
+        {
+            beanosCanJump = true;
+            Debug.Log("HA");
+        } 
+        if (beanosIsGrounded == false)// && !sneaking || !stabilizing)
+        {
+            beanosCanJump = false;
+            Debug.Log("HA");
+        }
+
+        if(beanosCanJump == false){
+            Debug.Log("heynot");
+        }
+        if(beanosCanJump == true){
+            Debug.Log("hey");
+        }
+        if(beanosIsGrounded == false){
+            Debug.Log("False");
+        } 
+        if(beanosIsGrounded == true){
+            Debug.Log("True");
+        }
+
     }
     
     
     private void FixedUpdate()
     {
-        if (jumpkeywaspressed == true && !isSneaking)
+        if (beanosShallJump == true)
         {
             rigidbodycomponent.AddForce(Vector3.up * Jumppower, ForceMode.VelocityChange);
-
-            jumpkeywaspressed = false;
+            Debug.Log("!!!");
+            beanosShallJump = false;
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
     }
@@ -162,8 +183,8 @@ public class BeanosPlayer : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            beanosCanJump = true;
-            beanosCouldJumpBefore = true;
+            beanosIsGrounded = true;
+            Debug.Log("HAHAH");
         }
 
         if (collision.gameObject.layer == 6)
@@ -171,7 +192,20 @@ public class BeanosPlayer : MonoBehaviour
             deathToBeanos = true;
         }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.layer == 3)
+        {
+            beanosIsGrounded = false;
+            Debug.Log("Exit!");
+        }
+    }
 
+
+    
+    
+    
+    
     public static int LONGBEANOS = 8;
     public static int COIN = 7;
     public static int FatBeno = 9;
@@ -185,29 +219,21 @@ public class BeanosPlayer : MonoBehaviour
             Debug.Log(Coins);
         }
 
+        // PWU Example
 
         //if(other.gameObject is PowerUp) {
         //    PowerUp powerUp = (PowerUp) other.gameObject;
         //    powerUp.DoPowerUp();
         //}
 
-        //Poweruplongbeno
-        if (other.gameObject.layer == LONGBEANOS && !isSneaking)
+        // Power-up longbeno
+        if (other.gameObject.layer == LONGBEANOS && !sneaking)
         {
             Destroy(other.gameObject);
             StartCoroutine(DoLongBeanos());
         }       
-
-        if (other.gameObject.layer == 10)
-        {
-            Destroy(other.gameObject);
-            // transform.localScale = Beanos;
-            MakeNoise = true;
-            Speed = 4;
-            Rightturnspeed = 120;
-            Leftturnspeed = -120;        
-        }
-        if (other.gameObject.layer == FatBeno && !isSneaking)
+        // Power-up fatbeno
+        if (other.gameObject.layer == FatBeno && !sneaking)
         {
             Destroy(other.gameObject);
             StartCoroutine(DoFatBeno());
@@ -219,9 +245,10 @@ public class BeanosPlayer : MonoBehaviour
     }
 
     int beanosLongCount = 0;
-
+   
    IEnumerator DoLongBeanos()  //  <-  its a standalone method
     {
+        NewCamera.offset = new Vector3(1, 1, -16.5f);
         Debug.Log("Long");
         LongBeanos();
         beanosLongCount = 1;
@@ -245,18 +272,18 @@ public class BeanosPlayer : MonoBehaviour
         Speed = Speed ++;
         Rightturnspeed = Rightturnspeed + 30;
         Leftturnspeed = Leftturnspeed - 30;
-        Sneakblocker = true;
+        sneakBlocker = true;
         Jumppower = Jumppower * 1.5f;   
     }
 
     private void ReverseLongBeanos()
     {
-        Sneakblocker = false;
+        sneakBlocker = false;
         transform.localScale = Normalbeanos;
         Speed = Speed --;
         Rightturnspeed = Rightturnspeed - 30;
         Leftturnspeed = Leftturnspeed + 30;
-        Sneakblocker = false;
+        sneakBlocker = false;
         Jumppower = Jumppower / 1.5f;   
     }
 
@@ -292,18 +319,18 @@ public class BeanosPlayer : MonoBehaviour
         Speed = Speed + 2;
         Rightturnspeed = Rightturnspeed + 10;
         Leftturnspeed = Leftturnspeed - 10;
-        Sneakblocker = true;
+        sneakBlocker = true;
         Jumppower = Jumppower * 1.5F;   
     }
 
     private void UnsetFatBeno()
     {
-        Sneakblocker = false;
+        sneakBlocker = false;
         transform.localScale = Normalbeanos;
         Speed = Speed - 2;
         Rightturnspeed = Rightturnspeed -10;
         Leftturnspeed = Rightturnspeed +10;
-        Sneakblocker = false;
+        sneakBlocker = false;
         Jumppower = Jumppower / 1.5f;   
     }   
     
@@ -314,6 +341,8 @@ public class BeanosPlayer : MonoBehaviour
 
 
 
+
+// PWU Example
 
 
 //      int _POWERUPNAME_Count = 0;
@@ -338,18 +367,18 @@ public class BeanosPlayer : MonoBehaviour
 //         Speed = Speed + ?;
 //         Rightturnspeed = Rightturnspeed + ?;
 //         Leftturnspeed = Leftturnspeed - ?;
-//         Sneakblocker = _TRUE OR FALSE_;
+//         sneakBlocker = _TRUE OR FALSE_;
 //         Jumppower = Jumppower * ?;   
 //     }
 
 //     private void Unset_POWERUPNAME_()
 //     {
-//         Sneakblocker = false;
+//         sneakBlocker = false;
 //         transform.localScale = Normalbeanos;
 //         Speed = Speed ?reverse?;
 //         Rightturnspeed = Rightturnspeed ?reverse?;
 //         Leftturnspeed = Leftturnspeed ?reverse?;
-//         Sneakblocker = false;
+//         sneakBlocker = false;
 //         Jumppower = Jumppower ?reverse?;   
 //     }
 

@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 4195256980350684690, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -222,6 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189d0fd34976dda478ca860e37a5cd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NewCamera: {fileID: 2948519759753800180}
+  CollisionUpdater: {fileID: 0}
   MakeLongBenoSound: 0
   CameraScript: {fileID: 0}
   Longbenopickupeffect: {fileID: 4965950572003843, guid: 6dc59e9a7db6cff439020f0703872992, type: 3}
@@ -387,6 +393,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
+--- !u!114 &2948519759753800180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7546196700993602441, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
+  m_PrefabInstance: {fileID: 4634844973771696765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef30f6b7b2da044ab89d6f8ccb6d226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &2948519759753800182 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7546196700993602443, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
