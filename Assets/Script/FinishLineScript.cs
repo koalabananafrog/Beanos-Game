@@ -21,12 +21,6 @@ public class FinishLineScript : MonoBehaviour
      private void DoVictoryScene(){
         Debug.Log("Started!");
         Instantiate(FetusBeanosTree, transform.position, transform.rotation);
-        Debug.Log("FetusDone!");
-        Instantiate(Confetti, transform.position, transform.rotation);
-        Instantiate(BabyBeanosTree, transform.position, transform.rotation);
-        Instantiate(YoungBeanosTree, transform.position, transform.rotation);
-        Instantiate(BeanosTree, transform.position, transform.rotation);
-        Debug.Log("Done!");
      }
 
 
