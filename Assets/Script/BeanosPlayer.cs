@@ -93,7 +93,7 @@ public class BeanosPlayer : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
             stabilizing = true;
         }
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
+        else{
             stabilizing = false;
         }
 
