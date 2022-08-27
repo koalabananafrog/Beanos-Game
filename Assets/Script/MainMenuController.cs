@@ -9,4 +9,8 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("LevelMenu");
     }
+
+    private void bajs(){
+        
+    }
 }

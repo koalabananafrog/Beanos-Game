@@ -8,18 +8,12 @@ public class CameraScript : MonoBehaviour
 {
      public Transform Target;
 
-     private BeanosPlayer player;
 
-    [SerializeField] private AudioClip LongBenoSound; 
-    
      public Vector3 offset;
 
      public float Smoothness = 0.125f;
 
-     private void Start(){
-        player = FindObjectOfType<BeanosPlayer>();
-     }
-    
+ 
 
 
     private void FixedUpdate()
@@ -38,31 +32,5 @@ public class CameraScript : MonoBehaviour
         {
             SceneManager.LoadScene("MenuAlpha1");
         }
-
-        infoDrawer (player.MakeLongBenoSound);
-
-        
-
-
-
     }
-
-    private void infoDrawer(bool MakeLongBenoSound){
-        if (MakeLongBenoSound == true){
-            AudioSource.PlayClipAtPoint(LongBenoSound, transform.position);
-            MakeLongBenoSound = false;
-            
-        }
-    }
-
-   
-
-    
-
-
-
-
-
-
-
 }

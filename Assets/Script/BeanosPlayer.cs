@@ -16,7 +16,8 @@ public enum Command {
 
 public class BeanosPlayer : MonoBehaviour
 {
-    public CameraScript NewCamera; 
+    public CameraScript NewCamera;
+    public FinishLineScript finishLineScript; 
     private bool beanosShallJump;
     private bool sneakBlocker;
     private bool JumpRequestAllowed;
@@ -79,7 +80,10 @@ public class BeanosPlayer : MonoBehaviour
     void Update()
     {
         //Input controlcenter
-        
+        if( == true){
+            // Destroy(gameObject);
+            Debug.Log("sadasdawedfaf");
+        }
         if(Dead){
             return;
         }
@@ -233,7 +237,6 @@ public class BeanosPlayer : MonoBehaviour
    
    IEnumerator DoLongBeanos()  //  <-  its a standalone method
     {
-        NewCamera.offset = new Vector3(1, 1, -16.5f);
         Debug.Log("Long");
         LongBeanos();
         beanosLongCount = 1;
@@ -249,12 +252,11 @@ public class BeanosPlayer : MonoBehaviour
     private void LongBeanos()
     {
         Instantiate(Longbenopickupeffect, transform.position, transform.rotation);
-
-        // Debug.Log(MainCamera);
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -1);
         AudioSource.PlayClipAtPoint(LongBenoSound, MainCamera.transform.position);
         transform.localScale = Longbeanos;
         MakeNoise = true;
-        Speed = Speed ++;
+        Speed = Speed++ ;
         Rightturnspeed = Rightturnspeed + 30;
         Leftturnspeed = Leftturnspeed - 30;
         sneakBlocker = true;
@@ -264,6 +266,7 @@ public class BeanosPlayer : MonoBehaviour
     private void ReverseLongBeanos()
     {
         sneakBlocker = false;
+         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 1);
         transform.localScale = Normalbeanos;
         Speed = Speed --;
         Rightturnspeed = Rightturnspeed - 30;
