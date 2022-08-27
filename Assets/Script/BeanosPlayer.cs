@@ -17,7 +17,7 @@ public enum Command {
 public class BeanosPlayer : MonoBehaviour
 {
     public CameraScript NewCamera;
-    public FinishLineScript finishLineScript; 
+    private bool executeBeanos;
     private bool beanosShallJump;
     private bool sneakBlocker;
     private bool JumpRequestAllowed;
@@ -28,7 +28,7 @@ public class BeanosPlayer : MonoBehaviour
     private Vector3 FatBenobeanos;
     private float Jumppower = 5;
     public bool MakeLongBenoSound;
-    public ScriptableObject CameraScript;
+    //public ScriptableObject CameraScript;
     [SerializeField] private GameObject Longbenopickupeffect; 
     private float LongBenoDuration = 5f;
     public bool BenosIsLong;
@@ -80,7 +80,7 @@ public class BeanosPlayer : MonoBehaviour
     void Update()
     {
         //Input controlcenter
-        if( == true){
+        if(executeBeanos == true){
             // Destroy(gameObject);
             Debug.Log("sadasdawedfaf");
         }
@@ -207,6 +207,10 @@ public class BeanosPlayer : MonoBehaviour
             Coins++;
             Debug.Log(Coins);
         }
+        if (other.gameObject.layer == 12){
+            Destroy(gameObject);
+            FinishSceneCameraFunction();
+        }
 
         // PWU Example
 
@@ -321,6 +325,10 @@ public class BeanosPlayer : MonoBehaviour
         sneakBlocker = false;
         Jumppower = Jumppower / 1.5f;   
     }   
+
+    private void FinishSceneCameraFunction(){
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , 10);
+    }
     
 
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class FinishLineScript : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class FinishLineScript : MonoBehaviour
     [SerializeField] private GameObject BabyBeanosTree;
     [SerializeField] private GameObject FetusBeanosTree;
 
-    public bool executeBeanos;
+    public bool executeBeanos = false;
 
 
      private void OnTriggerEnter(Collider other){
@@ -21,6 +22,7 @@ public class FinishLineScript : MonoBehaviour
         }
     }
      private void DoVictoryScene(){
+        executeBeanos = false;
         Debug.Log("Started!");
         Instantiate(FetusBeanosTree, transform.position, transform.rotation);
      }
