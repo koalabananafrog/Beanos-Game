@@ -208,7 +208,6 @@ public class BeanosPlayer : MonoBehaviour
             Debug.Log(Coins);
         }
         if (other.gameObject.layer == 12){
-            Destroy(gameObject);
             FinishSceneCameraFunction();
         }
 
@@ -222,8 +221,8 @@ public class BeanosPlayer : MonoBehaviour
         // Power-up longbeno
         if (other.gameObject.layer == LONGBEANOS && !sneaking)
         {
-            Destroy(other.gameObject);
             StartCoroutine(DoLongBeanos());
+            Destroy(other.gameObject);
         }       
         // Power-up fatbeno
         if (other.gameObject.layer == FatBeno && !sneaking)
@@ -270,7 +269,7 @@ public class BeanosPlayer : MonoBehaviour
     private void ReverseLongBeanos()
     {
         sneakBlocker = false;
-         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 1);
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 1);
         transform.localScale = Normalbeanos;
         Speed = Speed --;
         Rightturnspeed = Rightturnspeed - 30;
@@ -327,7 +326,9 @@ public class BeanosPlayer : MonoBehaviour
     }   
 
     private void FinishSceneCameraFunction(){
-        NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , 10);
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , -10);
+        NewCamera.Smoothness = NewCamera.Smoothness + 10;
+        Normalbeanos = new Vector3(0, 0, 0);
     }
     
 

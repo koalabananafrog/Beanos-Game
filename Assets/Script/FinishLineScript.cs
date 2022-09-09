@@ -11,19 +11,31 @@ public class FinishLineScript : MonoBehaviour
     [SerializeField] private GameObject YoungBeanosTree;
     [SerializeField] private GameObject BabyBeanosTree;
     [SerializeField] private GameObject FetusBeanosTree;
-
-    public bool executeBeanos = false;
-
-
+    public CameraScript cameraScript;
+    private bool launchBall = false;
+    private float Smoothness = 1;
+    public GameObject Ball;
+    private float TreeCount = 1; 
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
-            Debug.Log("Collision Working!");
+        }
+        if (launchBall == true){
+            Vector3 desiredPosition = Ball.transform.position + new Vector3(0, 1, 0);
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
+            transform.position = smoothedPosition;
         }
     }
-     private void DoVictoryScene(){
-        executeBeanos = false;
-        Debug.Log("Started!");
-        Instantiate(FetusBeanosTree, transform.position, transform.rotation);
+     private void DoVictoryScene()
+     {
+        if (TreeCount == 1)
+        {
+            Instantiate(FetusBeanosTree, transform.position, transform.rotation);
+            TreeCount--;
+        }
+        
+        launchBall = true;
+        cameraScript.FollowTreeGrowth = true;
      }
+
 }
