@@ -21,7 +21,7 @@ public class FinishLineScript : MonoBehaviour
             DoVictoryScene();
         }
         if (launchBall == true){
-            Vector3 desiredPosition = Ball.transform.position + new Vector3(0, 1, 0);
+            Vector3 desiredPosition = transform.position + new Vector3(0, 1, 0);
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
             transform.position = smoothedPosition;
         }

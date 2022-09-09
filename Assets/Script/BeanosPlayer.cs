@@ -6,13 +6,7 @@ using TMPro;
 using Unity.Audio;
 using System;
 using System.Timers;
-//using PowerUps;
 
-public enum Command {
-    moveForward,
-    moveBackward,
-    jump,
-} 
 
 public class BeanosPlayer : MonoBehaviour
 {
@@ -28,7 +22,6 @@ public class BeanosPlayer : MonoBehaviour
     private Vector3 FatBenobeanos;
     private float Jumppower = 5;
     public bool MakeLongBenoSound;
-    //public ScriptableObject CameraScript;
     [SerializeField] private GameObject Longbenopickupeffect; 
     private float LongBenoDuration = 5f;
     public bool BenosIsLong;
@@ -59,7 +52,6 @@ public class BeanosPlayer : MonoBehaviour
     private bool jumpKeyWasPressed;
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
-    // Start is called before the first frame update
     private Camera MainCamera;
     void Start()
     {
