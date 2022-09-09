@@ -7,6 +7,7 @@ using System;
 public class CameraScript : MonoBehaviour
 {
      public Transform Target;
+     public Transform Tree;
      private bool FollowBeanos; 
      public bool FollowTreeGrowth; 
      public Vector3 offset;
@@ -23,6 +24,10 @@ private void FixedUpdate()
     {
          if(FollowTreeGrowth == true){
             FollowBeanos = false;
+             offset = new Vector3(1, 1, 1);
+             Vector3 desiredPosition = Tree.position + offset;
+             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
+             transform.position = smoothedPosition;
         }
         if(FollowBeanos == true)
         {

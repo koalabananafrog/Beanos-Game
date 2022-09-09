@@ -199,9 +199,9 @@ public class BeanosPlayer : MonoBehaviour
             Coins++;
             Debug.Log(Coins);
         }
-        if (other.gameObject.layer == 12){
-            FinishSceneCameraFunction();
-        }
+        // if (other.gameObject.layer == 12){
+        //     FinishSceneCameraFunction();
+        // }
 
         // PWU Example
 
@@ -317,11 +317,11 @@ public class BeanosPlayer : MonoBehaviour
         Jumppower = Jumppower / 1.5f;   
     }   
 
-    private void FinishSceneCameraFunction(){
-        NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , -10);
-        NewCamera.Smoothness = NewCamera.Smoothness + 10;
-        Normalbeanos = new Vector3(0, 0, 0);
-    }
+    // private void FinishSceneCameraFunction(){
+    //     NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , -10);
+    //     NewCamera.Smoothness = NewCamera.Smoothness + 10;
+    //     Normalbeanos = new Vector3(0, 0, 0);
+    // }
     
 
 

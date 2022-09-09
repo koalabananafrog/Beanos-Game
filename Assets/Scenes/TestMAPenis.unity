@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2948519759753800180, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: Tree
+      value: 
+      objectReference: {fileID: 1845169541}
     - target: {fileID: 5273959745591226738, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
       propertyPath: m_Name
       value: EmptyGame
@@ -1596,6 +1600,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e14c3962b76e1784dbd6119fab3627c1, type: 3}
+--- !u!4 &1845169541 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6027367517211690220, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+  m_PrefabInstance: {fileID: 47002108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1982815465
 PrefabInstance:
   m_ObjectHideFlags: 0

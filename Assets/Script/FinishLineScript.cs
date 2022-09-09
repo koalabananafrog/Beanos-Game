@@ -14,7 +14,6 @@ public class FinishLineScript : MonoBehaviour
     public CameraScript cameraScript;
     private bool launchBall = false;
     private float Smoothness = 1;
-    public GameObject Ball;
     private float TreeCount = 1; 
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
