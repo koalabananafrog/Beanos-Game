@@ -6,11 +6,8 @@ using System;
 
 public class FinishLineScript : MonoBehaviour
 {
-    [SerializeField] private GameObject Confetti;
-    [SerializeField] private GameObject BeanosTree;
-    [SerializeField] private GameObject YoungBeanosTree;
-    [SerializeField] private GameObject BabyBeanosTree;
     [SerializeField] private GameObject FetusBeanosTree;
+    [SerializeField] private Animator InvisableCube;
     public CameraScript cameraScript;
     private bool launchBall = false;
     private float Smoothness = 1;
@@ -19,11 +16,11 @@ public class FinishLineScript : MonoBehaviour
         if (other.gameObject.layer == 11){
             DoVictoryScene();
         }
-        if (launchBall == true){
-            Vector3 desiredPosition = transform.position + new Vector3(0, 1, 0);
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
-            transform.position = smoothedPosition;
-        }
+        // if (launchBall == true){
+        //     Vector3 desiredPosition = transform.position + new Vector3(0, 1, 0);
+        //     Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
+        //     transform.position = smoothedPosition;
+        // }
     }
      private void DoVictoryScene()
      {
@@ -31,6 +28,7 @@ public class FinishLineScript : MonoBehaviour
         {
             Instantiate(FetusBeanosTree, transform.position, transform.rotation);
             TreeCount--;
+            InvisableCube.SetBool("TreeGrowing", true);
         }
         
         launchBall = true;

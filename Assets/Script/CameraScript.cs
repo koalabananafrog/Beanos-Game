@@ -24,10 +24,10 @@ private void FixedUpdate()
     {
          if(FollowTreeGrowth == true){
             FollowBeanos = false;
-             offset = new Vector3(1, 1, 1);
-             Vector3 desiredPosition = Tree.position + offset;
-             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
-             transform.position = smoothedPosition;
+            offset = new Vector3(0, 1, -15.5f);
+            Vector3 desiredPosition = Tree.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
+            transform.position = smoothedPosition;
         }
         if(FollowBeanos == true)
         {
