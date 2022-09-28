@@ -53,6 +53,8 @@ public class BeanosPlayer : MonoBehaviour
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
     private Camera MainCamera;
+    public bool makeCollisionFalse;
+
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -148,6 +150,9 @@ public class BeanosPlayer : MonoBehaviour
     
     private void FixedUpdate()
     {   
+        if(makeCollisionFalse == true){
+            rigidbodycomponent.detectCollisions = false;
+        }
         // jump Force Add
         if (beanosShallJump == true)
         {

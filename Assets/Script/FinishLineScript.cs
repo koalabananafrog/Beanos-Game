@@ -8,6 +8,7 @@ public class FinishLineScript : MonoBehaviour
 {
     [SerializeField] private GameObject FetusBeanosTree;
     [SerializeField] private Animator InvisableCube;
+    public BeanosPlayer beanosScript;
     public CameraScript cameraScript;
     private bool launchBall = false;
     private float Smoothness = 1;
@@ -29,8 +30,8 @@ public class FinishLineScript : MonoBehaviour
             Instantiate(FetusBeanosTree, transform.position, transform.rotation);
             TreeCount--;
             InvisableCube.SetBool("TreeGrowing", true);
+            beanosScript.makeCollisionFalse = true;
         }
-        
         launchBall = true;
         cameraScript.FollowTreeGrowth = true;
      }
