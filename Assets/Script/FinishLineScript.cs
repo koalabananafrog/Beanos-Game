@@ -12,10 +12,13 @@ public class FinishLineScript : MonoBehaviour
     public CameraScript cameraScript;
     private bool launchBall = false;
     private float Smoothness = 1;
-    private float TreeCount = 1; 
+    private float TreeCount = 1;
+    private string[] Levels = {"Level1", "Level2"}; 
+    
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
+            StartCoroutine(DoNextLevel());
         }
         // if (launchBall == true){
         //     Vector3 desiredPosition = transform.position + new Vector3(0, 1, 0);
@@ -34,6 +37,12 @@ public class FinishLineScript : MonoBehaviour
         }
         launchBall = true;
         cameraScript.FollowTreeGrowth = true;
+     }
+
+     IEnumerator DoNextLevel()
+     {
+        yield return new WaitForSeconds(20);
+        SceneManager.LoadScene(Levels[1]);
      }
 
 }

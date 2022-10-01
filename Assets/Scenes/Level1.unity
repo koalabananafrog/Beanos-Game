@@ -2652,6 +2652,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 97.04
       objectReference: {fileID: 0}
+    - target: {fileID: 4655292643810034215, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: InvisableCube
+      value: 
+      objectReference: {fileID: 1798484081}
     - target: {fileID: 5273959745591226738, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
       propertyPath: m_Name
       value: GrassWorldTemplate
@@ -6781,6 +6785,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3015336722647881133, guid: 959874881e372fb4c912f64abce6ba10, type: 3}
   m_PrefabInstance: {fileID: 1777360334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1798484081 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6570890355427394205, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+  m_PrefabInstance: {fileID: 474194624}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1835442542
 PrefabInstance:

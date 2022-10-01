@@ -58,6 +58,7 @@
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Script\BeanosPlayer.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\Script\LevelInformationScript.cs" />
      <None Include="Assets\AssetStoreAssets\PixelBlocksArt\Low_Poly_Pixel_2D_Blocks_DevilsWorkShop_v04\License.txt" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
