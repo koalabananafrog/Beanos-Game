@@ -13,18 +13,18 @@ public class FinishLineScript : MonoBehaviour
     private bool launchBall = false;
     private float Smoothness = 1;
     private float TreeCount = 1;
-    private string[] Levels = {"Level1", "Level2"}; 
+    private string[] Levels = {"Level1", "Level2"};
+    private string currentScene;
+    private int a;
+    private int b; 
     
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
             StartCoroutine(DoNextLevel());
+            LevelInformationScript.Level = a;
+            b = a++;
         }
-        // if (launchBall == true){
-        //     Vector3 desiredPosition = transform.position + new Vector3(0, 1, 0);
-        //     Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
-        //     transform.position = smoothedPosition;
-        // }
     }
      private void DoVictoryScene()
      {
@@ -42,7 +42,7 @@ public class FinishLineScript : MonoBehaviour
      IEnumerator DoNextLevel()
      {
         yield return new WaitForSeconds(20);
-        SceneManager.LoadScene(Levels[1]);
+        SceneManager.LoadScene(Levels[b]);
      }
 
 }
