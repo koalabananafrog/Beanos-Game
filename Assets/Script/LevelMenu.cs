@@ -7,12 +7,18 @@ public class LevelMenu : MonoBehaviour
 {
     public void Levelone()
     {
-        SceneManager.LoadScene("Level1");
+        if (LevelInformation.allLevels[0].IsUnlocked == true){
+            SceneManager.LoadScene(LevelInformation.allLevels[0].LevelName);
+            LevelInformation.CurrentLevel = LevelInformation.allLevels[0];
+        }
     }
 
     public void Leveltwo()
     {
-        SceneManager.LoadScene("Level2");
+        if (LevelInformation.allLevels[1].IsUnlocked == true){
+            SceneManager.LoadScene(LevelInformation.allLevels[1].LevelName);
+            LevelInformation.CurrentLevel = LevelInformation.allLevels[1];
+        }
     }
 
 }

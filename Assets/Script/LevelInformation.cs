@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelInformation : MonoBehaviour
 {   
-    public static bool CurrentLevel;
+    public static LevelInformation CurrentLevel;
 
     public string LevelName; 
     public bool IsUnlocked;
@@ -16,8 +16,8 @@ public class LevelInformation : MonoBehaviour
 
     public static LevelInformation[] allLevels = {
         new LevelInformation("Level1"),
-        new LevelInformation("level2"),
-        new LevelInformation("Third"),
+        new LevelInformation("Level2"),
+        new LevelInformation("level3"),
         new LevelInformation("Fourth"),
     }; 
 
