@@ -13,17 +13,14 @@ public class FinishLineScript : MonoBehaviour
     private bool launchBall = false;
     private float Smoothness = 1;
     private float TreeCount = 1;
-    private string[] Levels = {"Level1", "Level2"};
-    private string currentScene;
-    private int a;
-    private int b; 
-    
+    private int currentLevelIndex;
+
+
+
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
             StartCoroutine(DoNextLevel());
-            LevelInformationScript.Level = a;
-            b = a++;
         }
     }
      private void DoVictoryScene()
@@ -37,12 +34,18 @@ public class FinishLineScript : MonoBehaviour
         }
         launchBall = true;
         cameraScript.FollowTreeGrowth = true;
+        var index = Array.FindIndex<LevelInformation>(LevelInformation.allLevels, element => element == LevelInformation.CurrentLevel);
+            index = currentLevelIndex;
+            Debug.Log(currentLevelIndex);
+        LevelInformation.allLevels[currentLevelIndex].IsUnlocked = true;
+        Debug.Log(LevelInformation.allLevels[currentLevelIndex++].IsUnlocked);
      }
 
      IEnumerator DoNextLevel()
      {
-        yield return new WaitForSeconds(20);
-        SceneManager.LoadScene(Levels[b]);
+        yield return new WaitForSeconds(15);
+    
+        SceneManager.LoadScene(LevelInformation.allLevels[currentLevelIndex].LevelName);
      }
 
 }
