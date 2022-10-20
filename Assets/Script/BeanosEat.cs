@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeanosEat : MonoBehaviour
 {   
     [SerializeField] public Animator AnimatorController;
-   private void OnCollisionEnter(Collision collision){
+   private void OnTriggerEnter(Collision collision){
     if (collision.gameObject.layer == 11){
         AnimatorController.SetBool("EatBeanos", true);
     }
