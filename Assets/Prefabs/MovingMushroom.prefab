@@ -116,7 +116,7 @@ MonoBehaviour:
   WayPoints:
   - {fileID: 6131742671096783715}
   - {fileID: 2287833027815999927}
-  speed: 1
+  speed: 1.5
 --- !u!114 &3149852745477737812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 5210644350779282765}
   - component: {fileID: 4398707191534054190}
   m_Layer: 0
-  m_Name: Adopter
+  m_Name: MushroomPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 6389894098663571243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.3379517, y: 12.108158, z: -17.602219}
-  m_LocalScale: {x: 25, y: 1.5, z: 15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2984431279013584312}
@@ -268,11 +268,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6389894098663571243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c38de6fe86057428194524a16cbfee, type: 3}
+  m_Script: {fileID: 11500000, guid: 192768df8f294164a9919200bd36d8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionFollower: {fileID: 1541249938034850449}
-  PositionHolder: {fileID: 5210644350779282765}
+  PositionHolder: {fileID: 1541249938034850449}
 --- !u!1 &7262772534510927681
 GameObject:
   m_ObjectHideFlags: 0
