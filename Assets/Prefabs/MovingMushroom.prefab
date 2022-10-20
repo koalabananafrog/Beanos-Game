@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7500870649779019848}
   - component: {fileID: 2540727070751107582}
   - component: {fileID: 3149852745477737812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mushroom_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b45edfb5b176c4391f191c381d09db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WantedParent: {fileID: 5210644350779282765}
 --- !u!1 &2287833027815999927
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +192,7 @@ Transform:
   - {fileID: 1541249938034850449}
   - {fileID: 7832826374325778851}
   - {fileID: 1075047228828171920}
+  - {fileID: 5210644350779282765}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -225,6 +227,52 @@ Transform:
   m_Father: {fileID: 2984431279013584312}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6389894098663571243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5210644350779282765}
+  - component: {fileID: 4398707191534054190}
+  m_Layer: 0
+  m_Name: Adopter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5210644350779282765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389894098663571243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3379517, y: 12.108158, z: -17.602219}
+  m_LocalScale: {x: 25, y: 1.5, z: 15}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2984431279013584312}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4398707191534054190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389894098663571243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c38de6fe86057428194524a16cbfee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PositionFollower: {fileID: 1541249938034850449}
+  PositionHolder: {fileID: 5210644350779282765}
 --- !u!1 &7262772534510927681
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +285,7 @@ GameObject:
   - component: {fileID: 6776372781316716819}
   - component: {fileID: 7709021843591730219}
   - component: {fileID: 4835385561119313501}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

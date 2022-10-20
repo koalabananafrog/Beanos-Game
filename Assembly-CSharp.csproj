@@ -50,6 +50,7 @@
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\BallGame\EmitParticlesOnBallBounce.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Script\LevelMenu.cs" />
+     <Compile Include="Assets\Script\BeanosAdopter.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
      <Compile Include="Assets\Script\ObjectAdoptPlayer.cs" />
      <Compile Include="Assets\unabletodelete.cs" />
