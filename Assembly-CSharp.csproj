@@ -47,6 +47,7 @@
      <Compile Include="Assets\Script\PowerUps.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\BallGame\EmitParticlesOnBallBounce.cs" />
+     <Compile Include="Assets\Script\PositionFollow1.cs" />
      <Compile Include="Assets\Script\RespawnMenu.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Script\LevelMenu.cs" />

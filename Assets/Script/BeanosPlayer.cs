@@ -55,6 +55,8 @@ public class BeanosPlayer : MonoBehaviour
     private Camera MainCamera;
     public bool makeCollisionFalse;
 
+    [SerializeField] private Transform spider;
+
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -128,6 +130,7 @@ public class BeanosPlayer : MonoBehaviour
             RespawnMenu.SetActive(true);
             Dead = true;
             transform.localScale = deadBeanos;
+            spider.gameObject.SetActive(true);
         }
 
         horizontalinput = Input.GetAxis("Horizontal") * Speed;
