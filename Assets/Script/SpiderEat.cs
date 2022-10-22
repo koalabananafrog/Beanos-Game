@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class SpiderEat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private Animator SpiderAnim;
 
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
-            transform.localScale = new Vector3(10, 10, 10);
+            SpiderAnim.SetBool("EatBeanos", true);
         }
     }
 }

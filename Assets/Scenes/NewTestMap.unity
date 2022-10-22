@@ -4557,11 +4557,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 869d972dd2d69ea4193c40016d3a88cd, type: 3}
---- !u!1 &1401856373 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 250731039195966086, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
-  m_PrefabInstance: {fileID: 1128910871}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1408038156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7209,66 +7204,3 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 869d972dd2d69ea4193c40016d3a88cd, type: 3}
---- !u!1001 &6508400343162394676
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6508400343577553875, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_Name
-      value: Spider
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_RootOrder
-      value: 109
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 81.97902
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -95.571594
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 185.20912
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343577553884, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508400343892749099, guid: b2433626548dfaf4c80215c664fa8179, type: 3}
-      propertyPath: WayPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1401856373}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2433626548dfaf4c80215c664fa8179, type: 3}

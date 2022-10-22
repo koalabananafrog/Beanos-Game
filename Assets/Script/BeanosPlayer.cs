@@ -67,7 +67,7 @@ public class BeanosPlayer : MonoBehaviour
         Longbeanos = new Vector3(2, 2.8f, 2);
         Sneakingbeanos = new Vector3(1, 0.6f, 1);
         Normalbeanos = new Vector3(1, 1, 1);
-        deadBeanos = new Vector3(0.9f, 0.2f, 1);
+        deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         sneakingLongbeanos = new Vector3(2, 2.4f, 2);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
     }
