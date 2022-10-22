@@ -5,12 +5,17 @@ using UnityEngine;
 public class WayPointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] WayPoints;
-    [SerializeField] private float speed = 1;
+    [SerializeField] private float normalSpeed = 1;
     [SerializeField] private float fastSpeed = 10;
+    private float currentSpeed;
     private int desiredWayPointIndex = 0;
     [SerializeField] private bool FaceWaiponts = false;
     [SerializeField] private bool ChangeSpeed = false;
     [SerializeField] private bool loop = true;
+
+    void Start(){
+        currentSpeed = normalSpeed;
+    }
 
     
     void Update()
@@ -23,8 +28,9 @@ public class WayPointFollower : MonoBehaviour
                 desiredWayPointIndex = 0;
             }
         }
+        Debug.Log(desiredWayPointIndex);
 
-        transform.position = Vector3.MoveTowards(transform.position, WayPoints[desiredWayPointIndex].transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, WayPoints[desiredWayPointIndex].transform.position, currentSpeed * Time.deltaTime);
 
         if (FaceWaiponts){
             transform.LookAt(WayPoints[desiredWayPointIndex].transform);
@@ -32,10 +38,10 @@ public class WayPointFollower : MonoBehaviour
 
         if (ChangeSpeed){
             if (desiredWayPointIndex%2==0){
-                speed = fastSpeed;
+                currentSpeed = fastSpeed;
             }
             else{
-                return;
+                currentSpeed = normalSpeed;
             }
         }
     }
