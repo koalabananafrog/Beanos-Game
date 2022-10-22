@@ -43,7 +43,7 @@ public class BeanosPlayer : MonoBehaviour
     private Vector3 Normalbeanos;
     private Vector3 Sneakingbeanos;
     private float Coins;
-    private bool deathToBeanos;
+    private bool sendDeathSpider;
     private bool sneaking;
     [SerializeField] private GameObject RespawnMenu;
     private bool Ddown;
@@ -54,7 +54,7 @@ public class BeanosPlayer : MonoBehaviour
     private Rigidbody rigidbodycomponent;
     private Camera MainCamera;
     public bool makeCollisionFalse;
-
+    private bool dieBeanos;
     [SerializeField] private Transform spider;
 
     void Start()
@@ -125,11 +125,14 @@ public class BeanosPlayer : MonoBehaviour
 
        
         // Death void detection
-        if(deathToBeanos == true)
+        if(dieBeanos == true)
         {
             RespawnMenu.SetActive(true);
             Dead = true;
             transform.localScale = deadBeanos;
+            rigidbodycomponent.constraints = RigidbodyConstraints.FreezePosition;
+        }
+        if (sendDeathSpider == true){
             spider.gameObject.SetActive(true);
         }
 
@@ -178,7 +181,7 @@ public class BeanosPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 6)
         {
-            deathToBeanos = true;
+            sendDeathSpider = true;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -206,6 +209,9 @@ public class BeanosPlayer : MonoBehaviour
             Destroy(other.gameObject);
             Coins++;
             Debug.Log(Coins);
+        }
+        if (other.gameObject.layer == 13){
+            dieBeanos = true;
         }
         // if (other.gameObject.layer == 12){
         //     FinishSceneCameraFunction();

@@ -11,14 +11,14 @@ TagManager:
   - JumpAbleObj
   - Water
   - UI
-  - DeathToBenos
+  - SendDeathSpider
   - Coins
   - LongBeno
   - FatBeno
   - StandardBeano
   - PlayerBeno
   - FinishlineHitBox
-  - 
+  - DieBeanos
   - 
   - 
   - 
