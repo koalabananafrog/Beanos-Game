@@ -455,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9138348080249583301}
   - component: {fileID: 5555633834150496900}
+  - component: {fileID: 4823481330457589262}
   m_Layer: 11
   m_Name: SpiderWayPoint 2
   m_TagString: Untagged
@@ -469,12 +470,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668463593397321088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.33, y: 0, z: 2.36}
+  m_LocalRotation: {x: -0, y: -0.70718086, z: -0, w: -0.70703274}
+  m_LocalPosition: {x: 14.8469925, y: -55.81, z: 110.96351}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8528490108383882350}
+  m_Father: {fileID: 1317821932237663499}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5555633834150496900
@@ -491,8 +492,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &4823481330457589262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668463593397321088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814e4a513a1cbc74da99fbe238dbc451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PositionHolder: {fileID: 8528490108383882350}
 --- !u!1 &1911563304768427907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1692,7 @@ Transform:
   - {fileID: 1142916652219753127}
   - {fileID: 4260070040012074550}
   - {fileID: 2948519759753800183}
+  - {fileID: 9138348080249583301}
   - {fileID: 8528490108383882350}
   - {fileID: 2948519758480350580}
   - {fileID: 3566762075407666397}
@@ -3512,9 +3527,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7662731995551619790}
-    - targetCorrespondingSourceObject: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9138348080249583301}
   m_SourcePrefab: {fileID: 100100000, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
 --- !u!1 &7342953466195752120 stripped
 GameObject:

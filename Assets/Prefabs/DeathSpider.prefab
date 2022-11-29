@@ -611,8 +611,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2538068752763005432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019592397, y: -0.8199997, z: -0.412682}
-  m_LocalScale: {x: 0.3457698, y: 1, z: 0.19590798}
+  m_LocalPosition: {x: 0.019592397, y: -0.8199997, z: -0.7050095}
+  m_LocalScale: {x: 0.34576982, y: 1, z: 0.57271314}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8591302650664066056}
@@ -1472,8 +1472,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6508400343892749096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5731885, y: 1, z: 4.052019}
+  m_LocalPosition: {x: 0, y: 0, z: -0.695}
+  m_LocalScale: {x: 3.5731885, y: 1, z: 1.3860742}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3269510264468045557}
@@ -1557,8 +1557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WayPoints:
   - {fileID: 0}
-  normalSpeed: 3
-  fastSpeed: 50
+  normalSpeed: 4
+  fastSpeed: 1000
   FaceWaiponts: 1
   ChangeSpeed: 1
   loop: 0
