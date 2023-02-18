@@ -20,7 +20,7 @@ public class BeanosPlayer : MonoBehaviour
     private int beanosGrounds;
     private bool beanosCouldJumpBefore;
     private Vector3 FatBenobeanos;
-    private float Jumppower = 5;
+    private float Jumppower = 300;
     public bool MakeLongBenoSound;
     [SerializeField] private GameObject Longbenopickupeffect; 
     private float LongBenoDuration = 5f;
@@ -56,6 +56,7 @@ public class BeanosPlayer : MonoBehaviour
     public bool makeCollisionFalse;
     private bool dieBeanos;
     [SerializeField] private Transform spider;
+
 
     void Start()
     {
@@ -162,8 +163,9 @@ public class BeanosPlayer : MonoBehaviour
         // jump Force Add
         if (beanosShallJump == true)
         {
-            rigidbodycomponent.AddForce(Vector3.up * Jumppower, ForceMode.VelocityChange);
+            rigidbodycomponent.AddForce(Vector3.up * Jumppower * Time.deltaTime, ForceMode.VelocityChange);
             beanosShallJump = false;
+            Debug.Log(Jumppower);
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
     }

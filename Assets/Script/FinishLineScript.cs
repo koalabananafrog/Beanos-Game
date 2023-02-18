@@ -14,8 +14,7 @@ public class FinishLineScript : MonoBehaviour
     private float TreeCount = 1;
 
     
-
-
+    
 
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
@@ -34,13 +33,17 @@ public class FinishLineScript : MonoBehaviour
         }
         launchBall = true;
         cameraScript.FollowTreeGrowth = true;
+        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        LevelMenu.levelStatus = nextScene;
+        Debug.Log(LevelMenu.levelStatus + "status");
      }
 
      IEnumerator DoNextLevel()
      {
         yield return new WaitForSeconds(15);
 
-        int nextSceneIndex = SceneManager.GetActiveScene(buildIndex);
+        Scene currentScene = SceneManager.GetActiveScene();
+        int nextSceneIndex = currentScene.buildIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);
      }
 
