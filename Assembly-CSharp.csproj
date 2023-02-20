@@ -41,7 +41,6 @@
      <Compile Include="Assets\Script\MainMenuController.cs" />
      <Compile Include="Assets\Script\BeanosAudioManager.cs" />
      <Compile Include="Assets\Script\FatBenoRotation.cs" />
-     <Compile Include="Assets\CollisionUpdaterScript.cs" />
      <Compile Include="Assets\Script\FinishLineScript.cs" />
      <Compile Include="Assets\Script\PowerUps.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
@@ -51,7 +50,6 @@
      <Compile Include="Assets\Script\LevelMenu.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
      <Compile Include="Assets\Script\ObjectAdoptPlayer.cs" />
-     <Compile Include="Assets\unabletodelete.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\Script\CameraScript.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
@@ -63,6 +61,7 @@
      <Compile Include="Assets\Script\PositionFollow1.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Script\BeanosPlayer.cs" />
+     <Compile Include="Assets\Script\BeanosEffects.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -77,7 +76,6 @@
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\AssetStoreAssets\StylizedGrass\READMEdoc.txt" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\AssetStoreAssets\SimpleNaturePack\PB_Spider\readme.txt" />
