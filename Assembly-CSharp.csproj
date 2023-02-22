@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+     <Compile Include="Assets\Script\Particles.cs" />
      <Compile Include="Assets\Script\MainMenuController.cs" />
      <Compile Include="Assets\Script\BeanosAudioManager.cs" />
      <Compile Include="Assets\Script\FatBenoRotation.cs" />
