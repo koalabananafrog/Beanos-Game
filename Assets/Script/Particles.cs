@@ -6,10 +6,15 @@ public class Particles : MonoBehaviour
 {
     [SerializeField] private Transform posHolder;
     private Vector3 offset;
+    private Vector3 posHolderVector;
     void Start(){
-        offset = (posHolder.transform.position - transform.position) * -1;
+        offset = (posHolderVector - transform.position) * -1;
+        Debug.Log(offset + "offset");
+        Debug.Log(posHolderVector + "posHolder");
     }
     private void FixedUpdate(){
-        transform.position = new Vector3
+        posHolderVector = posHolder.transform.position;
+        var iWantPos = posHolderVector + offset;
+        transform.position = new Vector3(iWantPos.x, transform.position.y, transform.position.z);
      }
 }
