@@ -16,5 +16,5 @@ public class Particles : MonoBehaviour
         posHolderVector = posHolder.transform.position;
         var iWantPos = posHolderVector + offset;
         transform.position = new Vector3(iWantPos.x, transform.position.y, transform.position.z);
-     }
+    }
 }

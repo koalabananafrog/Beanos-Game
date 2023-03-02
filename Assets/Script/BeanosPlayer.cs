@@ -61,8 +61,8 @@ public class BeanosPlayer : MonoBehaviour
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
-        Rightturnspeed = 120;
-        Leftturnspeed = -120;
+        Rightturnspeed = 140;
+        Leftturnspeed = -140;
         rigidbodycomponent = GetComponent<Rigidbody>();
         Speed = 2;
         Longbeanos = new Vector3(2, 2.8f, 2);
@@ -168,6 +168,8 @@ public class BeanosPlayer : MonoBehaviour
             Debug.Log(Jumppower);
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
+
+
     }
     
     
