@@ -1274,6 +1274,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 99.85
       objectReference: {fileID: 0}
+    - target: {fileID: 4207674013564402885, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: m_Range
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207674013564402885, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207674013564402885, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207674013564402885, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.90467775
+      objectReference: {fileID: 0}
     - target: {fileID: 5273959745591226738, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
       propertyPath: m_Name
       value: GrassWorldTemplate
@@ -1282,17 +1298,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 72.4
       objectReference: {fileID: 0}
+    - target: {fileID: 6304035432931107203, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 8528490108383882350, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.77
+      value: 13.03
       objectReference: {fileID: 0}
     - target: {fileID: 8528490108383882350, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.14
+      value: -48.94
       objectReference: {fileID: 0}
     - target: {fileID: 8528490108383882350, guid: 8cdc4367dc0a02b46a603bfe811c7d2a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 103.60052
+      value: 103.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
