@@ -66,7 +66,7 @@ public class BeanosPlayer : MonoBehaviour
         rigidbodycomponent = GetComponent<Rigidbody>();
         Speed = 2;
         Longbeanos = new Vector3(2, 2.8f, 2);
-        Sneakingbeanos = new Vector3(1, 0.6f, 1);
+        Sneakingbeanos = new Vector3(0.7f, 0.6f, 0.7f);
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         sneakingLongbeanos = new Vector3(2, 2.4f, 2);
