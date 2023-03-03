@@ -508,6 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PositionHolder: {fileID: 8528490108383882350}
   freezeAllPosExeptX: 0
+  followWithOffset: 0
 --- !u!1 &1911563304768427907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3762,6 +3763,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7546196700993602441, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
+      propertyPath: Tree
+      value: 
+      objectReference: {fileID: 6027367517211690220}
+    - target: {fileID: 7546196700993602441, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
       propertyPath: Target
       value: 
       objectReference: {fileID: 8528490108383882350}
@@ -3938,6 +3943,10 @@ PrefabInstance:
       propertyPath: cameraScript
       value: 
       objectReference: {fileID: 2948519759753800180}
+    - target: {fileID: 336781074204586601, guid: 33f8ec357e81b1542b68e6453c0f7ed7, type: 3}
+      propertyPath: InvisableCube
+      value: 
+      objectReference: {fileID: 6570890355427394205}
     - target: {fileID: 1698725357804401826, guid: 33f8ec357e81b1542b68e6453c0f7ed7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.011999266
@@ -4063,6 +4072,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e3e9e5468c2c94a8336e6fe3bea4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &6027367517211690220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1698725357804401826, guid: 33f8ec357e81b1542b68e6453c0f7ed7, type: 3}
+  m_PrefabInstance: {fileID: 4915282502844723278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5580856308352669187
 PrefabInstance:
   m_ObjectHideFlags: 0
