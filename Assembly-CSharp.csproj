@@ -63,6 +63,7 @@
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Script\BeanosPlayer.cs" />
      <Compile Include="Assets\Script\BeanosEffects.cs" />
+     <Compile Include="Assets\Script\HomingRocket.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
