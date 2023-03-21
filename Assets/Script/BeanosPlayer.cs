@@ -10,6 +10,7 @@ using System.Timers;
 
 public class BeanosPlayer : MonoBehaviour
 {
+    private bool exploJump;
     public CameraScript NewCamera;
     private bool executeBeanos;
     private bool beanosShallJump;
@@ -35,6 +36,7 @@ public class BeanosPlayer : MonoBehaviour
     private float Rightturnspeed;
     private float Speed;
     [SerializeField] private AudioClip LongBenoSound;
+    [SerializeField] private AudioClip FatBenoSound;
     public AudioClip jumpSound;
     private bool MakeNoise;
     private Vector3 Longbeanos;
@@ -56,6 +58,8 @@ public class BeanosPlayer : MonoBehaviour
     public bool makeCollisionFalse;
     private bool dieBeanos;
     [SerializeField] private Transform spider;
+    [SerializeField] private GameObject FatBenoFX;
+    private bool AWPFORCE;
 
 
     void Start()
@@ -152,6 +156,9 @@ public class BeanosPlayer : MonoBehaviour
         else{
             beanosCanJump = false;
         }
+
+       
+
     }
     
     
@@ -165,9 +172,16 @@ public class BeanosPlayer : MonoBehaviour
         {
             rigidbodycomponent.AddForce(Vector3.up * Jumppower * Time.deltaTime, ForceMode.VelocityChange);
             beanosShallJump = false;
-            Debug.Log(Jumppower);
+            if(exploJump == true){
+                Instantiate(FatBenoFX, transform.position + new Vector3(0, -1, 0), transform.rotation);
+                AudioSource.PlayClipAtPoint(FatBenoSound, MainCamera.transform.position);
+            }
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
+
+        if (AWPFORCE == true){
+            rigidbodycomponent.AddForce(transform.up * 35);
+        }
 
 
     }
@@ -239,11 +253,17 @@ public class BeanosPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
             StartCoroutine(DoFatBeno());
-        }     
-
-
-
-
+        }   
+        if (other.gameObject.tag == "WATERPULSE"){
+            AWPFORCE = true;
+            NewCamera.Smoothness = 0.2f;
+        }  
+    }
+    private void OnTriggerExit(Collider other){
+        if (other.gameObject.tag == "WATERPULSE"){
+            AWPFORCE = false;
+            NewCamera.Smoothness = 0.125f;
+        }  
     }
 
     int beanosLongCount = 0;
@@ -316,12 +336,18 @@ public class BeanosPlayer : MonoBehaviour
 
     private void SetFatBeno()
     {
+        Instantiate(FatBenoFX, transform.position, transform.rotation);
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -10);
+        AudioSource.PlayClipAtPoint(FatBenoSound, MainCamera.transform.position);
         transform.localScale = FatBenobeanos;
         Speed = Speed + 2;
         Rightturnspeed = Rightturnspeed + 10;
         Leftturnspeed = Leftturnspeed - 10;
         sneakBlocker = true;
-        Jumppower = Jumppower * 1.5F;   
+        Jumppower = Jumppower * 3;
+        exploJump = true;
+        NewCamera.Smoothness = 0.2f;
+
     }
 
     private void UnsetFatBeno()
@@ -332,7 +358,10 @@ public class BeanosPlayer : MonoBehaviour
         Rightturnspeed = Rightturnspeed -10;
         Leftturnspeed = Rightturnspeed +10;
         sneakBlocker = false;
-        Jumppower = Jumppower / 1.5f;   
+        Jumppower = Jumppower / 3;
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 10);   
+        exploJump = false;
+        NewCamera.Smoothness = 0.125f;
     }   
 
     // private void FinishSceneCameraFunction(){

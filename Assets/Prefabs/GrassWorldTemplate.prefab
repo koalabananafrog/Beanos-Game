@@ -3827,10 +3827,12 @@ MonoBehaviour:
   BenosIsLong: 0
   targetTime: 100
   LongBenoSound: {fileID: 8300000, guid: 848e97bcd9288d44f9aba5d69f2aad15, type: 3}
+  FatBenoSound: {fileID: 8300000, guid: 19291fcf19b42504985bb1977197ea58, type: 3}
   jumpSound: {fileID: 0}
   RespawnMenu: {fileID: 2948519758058194901}
   makeCollisionFalse: 0
   spider: {fileID: 3566762075407666397}
+  FatBenoFX: {fileID: 1000011797152326, guid: 69fbb8b01cfc7094a946e1310607366d, type: 3}
 --- !u!4 &8528490108383882350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
