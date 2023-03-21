@@ -65,6 +65,7 @@
      <Compile Include="Assets\Script\BeanosEffects.cs" />
      <Compile Include="Assets\Script\HomingRocket.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\Script\WORMYSC.cs" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -88,6 +89,7 @@
      <None Include="Assets\AssetStoreAssets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\AssetStoreAssets\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
