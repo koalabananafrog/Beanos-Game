@@ -12,6 +12,8 @@ public class CameraScript : MonoBehaviour
      public bool FollowTreeGrowth; 
      public Vector3 offset;
      public float Smoothness = 0.125f;
+     [SerializeField] private bool wormyRot = false;
+     
     
     
     private void Start()
@@ -34,6 +36,12 @@ private void FixedUpdate()
         Vector3 desiredPosition = Target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
         transform.position = smoothedPosition;
+        }
+        if(wormyRot && transform.rotation.y == 0){
+            transform.Rotate(0, 1, 0);
+        }
+        else{
+            Debug.Log("Help");
         }
         
 

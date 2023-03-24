@@ -3,7 +3,16 @@ guid: 189d0fd34976dda478ca860e37a5cd31
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - NewCamera: {instanceID: 0}
+  - Longbenopickupeffect: {instanceID: 0}
+  - LongBenoSound: {instanceID: 0}
+  - FatBenoSound: {instanceID: 0}
+  - jumpSound: {instanceID: 0}
+  - RespawnMenu: {instanceID: 0}
+  - spider: {instanceID: 0}
+  - FatBenoFX: {instanceID: 0}
+  - CoinSound: {fileID: 8300000, guid: d16a2a08c7a6be6488efc6c7715b95f6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

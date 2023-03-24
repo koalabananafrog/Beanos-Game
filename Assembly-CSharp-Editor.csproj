@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetStoreAssets\LowPolyWater_Pack\Scripts\Editor\GeneratePlane.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
      <None Include="Assets\Editor\MediationAdapterDependencies.xml" />
      <None Include="Assets\AssetStoreAssets\EffectExamples\Editor\PackageManagerAssembly\PackageImportList.txt" />

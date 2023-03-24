@@ -60,7 +60,8 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private Transform spider;
     [SerializeField] private GameObject FatBenoFX;
     private bool AWPFORCE;
-
+    [SerializeField] private AudioClip CoinSound;
+    [SerializeField] private GameObject CoinEffect;
 
     void Start()
     {
@@ -226,6 +227,8 @@ public class BeanosPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
             Coins++;
+            AudioSource.PlayClipAtPoint(CoinSound, MainCamera.transform.position);
+            Instantiate(CoinEffect, transform.position, transform.rotation);
             Debug.Log(Coins);
         }
         if (other.gameObject.layer == 13){
@@ -273,7 +276,7 @@ public class BeanosPlayer : MonoBehaviour
         Debug.Log("Long");
         LongBeanos();
         beanosLongCount = 1;
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(15);
         beanosLongCount -= 1;
         if(beanosLongCount == 0) {
             ReverseLongBeanos();
@@ -285,7 +288,8 @@ public class BeanosPlayer : MonoBehaviour
     private void LongBeanos()
     {
         Instantiate(Longbenopickupeffect, transform.position, transform.rotation);
-        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -1);
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -2);
+        NewCamera.Smoothness = 0.2f;
         AudioSource.PlayClipAtPoint(LongBenoSound, MainCamera.transform.position);
         transform.localScale = Longbeanos;
         MakeNoise = true;
@@ -300,6 +304,7 @@ public class BeanosPlayer : MonoBehaviour
     {
         sneakBlocker = false;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 1);
+        NewCamera.Smoothness = 0.125f;
         transform.localScale = Normalbeanos;
         Speed = Speed --;
         Rightturnspeed = Rightturnspeed - 30;
