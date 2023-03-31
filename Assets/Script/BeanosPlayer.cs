@@ -173,6 +173,8 @@ public class BeanosPlayer : MonoBehaviour
         {
             rigidbodycomponent.AddForce(Vector3.up * Jumppower * Time.deltaTime, ForceMode.VelocityChange);
             beanosShallJump = false;
+            AudioSource.PlayClipAtPoint(jumpSound, MainCamera.transform.position);
+            
             if(exploJump == true){
                 Instantiate(FatBenoFX, transform.position + new Vector3(0, -1, 0), transform.rotation);
                 AudioSource.PlayClipAtPoint(FatBenoSound, MainCamera.transform.position);
@@ -331,7 +333,7 @@ public class BeanosPlayer : MonoBehaviour
     {
         SetFatBeno();
         FatBenoCount = 1;
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20);
         FatBenoCount -= 1;
         if(FatBenoCount == 0) {
             UnsetFatBeno();

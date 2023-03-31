@@ -12,6 +12,10 @@ public class WayPointFollower : MonoBehaviour
     [SerializeField] private bool FaceWaiponts = false;
     [SerializeField] private bool ChangeSpeed = false;
     [SerializeField] private bool loop = true;
+    [SerializeField] private bool fastReturn = false;
+    [SerializeField] private bool stayOnEnds = false;
+    [SerializeField] private float stayTime = 5;
+
 
     void Start(){
         currentSpeed = normalSpeed;
@@ -35,7 +39,7 @@ public class WayPointFollower : MonoBehaviour
             }
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, WayPoints[desiredWayPointIndex].transform.position, currentSpeed * Time.deltaTime);
+        
 
         if (FaceWaiponts){
             transform.LookAt(WayPoints[desiredWayPointIndex].transform);
@@ -49,5 +53,36 @@ public class WayPointFollower : MonoBehaviour
                 currentSpeed = normalSpeed;
             }
         }
+
+        if(fastReturn){
+            if(desiredWayPointIndex == WayPoints.Length - 1){
+                currentSpeed = fastSpeed;
+            }
+            if(desiredWayPointIndex == 0){
+                currentSpeed = normalSpeed;
+            }
+        }
+        
+        if(stayOnEnds){
+            if(desiredWayPointIndex == WayPoints.Length - 1){
+                StartCoroutine(WaitNow());
+            }
+            if(desiredWayPointIndex == 0){
+                StartCoroutine(WaitNow());
+            }
+        }
     }
+
+    private void FixedUpdate(){
+        
+        transform.position = Vector3.MoveTowards(transform.position, WayPoints[desiredWayPointIndex].transform.position, currentSpeed * Time.deltaTime);
+        
+    }
+
+    IEnumerator WaitNow(){
+        currentSpeed = 0;
+        yield return new WaitForSeconds(5);
+        currentSpeed = normalSpeed;
+    }
+    
 }
