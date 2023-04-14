@@ -15,6 +15,8 @@ public class WayPointFollower : MonoBehaviour
     [SerializeField] private bool fastReturn = false;
     [SerializeField] private bool stayOnEnds = false;
     [SerializeField] private float stayTime = 5;
+    private bool touch = false;
+    private bool Waiting = false;
 
 
     void Start(){
@@ -37,6 +39,7 @@ public class WayPointFollower : MonoBehaviour
                     desiredWayPointIndex++;
                 }
             }
+            touch = true;
         }
 
         
@@ -48,28 +51,48 @@ public class WayPointFollower : MonoBehaviour
         if (ChangeSpeed){
             if (desiredWayPointIndex%2==0){
                 currentSpeed = fastSpeed;
+
             }
             else{
                 currentSpeed = normalSpeed;
+
             }
         }
 
-        if(fastReturn){
+        if(fastReturn && !Waiting){
             if(desiredWayPointIndex == WayPoints.Length - 1){
                 currentSpeed = fastSpeed;
+
             }
             if(desiredWayPointIndex == 0){
                 currentSpeed = normalSpeed;
+
             }
         }
         
         if(stayOnEnds){
-            if(desiredWayPointIndex == WayPoints.Length - 1){
+            if(desiredWayPointIndex == WayPoints.Length - 1 && touch){
                 StartCoroutine(WaitNow());
+                touch = false;
+                Waiting = true;
             }
-            if(desiredWayPointIndex == 0){
+            if(desiredWayPointIndex == 0 && touch){
                 StartCoroutine(WaitNow());
+                touch = false;
+                Waiting = true;
             }
+        }
+        if(stayOnEnds){
+            Debug.Log("stayOnEnds");
+        }
+        if(desiredWayPointIndex == WayPoints.Length - 1){
+            Debug.Log("Going TO End");
+        }
+        if(desiredWayPointIndex == 0){
+            Debug.Log("Going TO Start");
+        }
+        if(touch){
+            Debug.Log("Touch");
         }
     }
 
@@ -78,11 +101,12 @@ public class WayPointFollower : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, WayPoints[desiredWayPointIndex].transform.position, currentSpeed * Time.deltaTime);
         
     }
-
     IEnumerator WaitNow(){
-        currentSpeed = 0;
-        yield return new WaitForSeconds(5);
+        currentSpeed = currentSpeed * 0;
+        Debug.Log("stop");
+        yield return new WaitForSeconds(stayTime);
+        Debug.Log("start");
         currentSpeed = normalSpeed;
+        Waiting = false;
     }
-    
 }
