@@ -13,13 +13,22 @@ public class CameraScript : MonoBehaviour
      public Vector3 offset;
      public float Smoothness = 0.125f;
      [SerializeField] private bool wormyRot = false;
-     
-    
+     public float rotateSpeed=2f;
+     private bool rotateRight;
+     private bool rotateLeft;
+     private Vector3 vector3Manos = new Vector3(50, 5, 4);
     
     private void Start()
     {
         FollowBeanos = true;
         FollowTreeGrowth = false;
+        
+        if(wormyRot){
+            StartCoroutine(RotateCamera());
+        }
+        else{
+            Debug.Log("Help");
+        }
     }
 
 private void FixedUpdate()
@@ -37,11 +46,11 @@ private void FixedUpdate()
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, Smoothness);
         transform.position = smoothedPosition;
         }
-        if(wormyRot && transform.rotation.y == 0){
-            transform.Rotate(0, 1, 0);
+        if(rotateRight){
+            transform.RotateAround(Target.position, Vector3.down, rotateSpeed* Time.deltaTime);
         }
-        else{
-            Debug.Log("Help");
+        if(rotateLeft){
+            transform.RotateAround(Target.position, Vector3.up, rotateSpeed* Time.deltaTime);
         }
         
 
@@ -55,5 +64,16 @@ private void FixedUpdate()
         {
             SceneManager.LoadScene("MenuAlpha1");
         }
+    }
+    private IEnumerator RotateCamera(){
+        rotateRight = true;
+        offset = vector3Manos;
+        yield return new WaitForSeconds(1.5f);
+        rotateRight = false;
+        yield return new WaitForSeconds(3);
+        rotateLeft = true;
+        offset = new Vector3(0, 1, -15.5f);    
+        yield return new WaitForSeconds(1.5f);
+        rotateLeft = false;       
     }
 }
