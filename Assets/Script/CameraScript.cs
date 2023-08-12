@@ -11,13 +11,16 @@ public class CameraScript : MonoBehaviour
      private bool FollowBeanos; 
      public bool FollowTreeGrowth; 
      public Vector3 offset;
+     public Vector3 orgOffset;
      public float Smoothness = 0.125f;
      [SerializeField] private bool wormyRot = false;
      public float rotateSpeed=2f;
      private bool rotateRight;
      private bool rotateLeft;
      private Vector3 vector3Manos = new Vector3(50, 5, 4);
-    
+     private Vector3 beanosVelocity;
+     private float lerpOffsetX;
+     private float xSmoothness = 100;
     private void Start()
     {
         FollowBeanos = true;
@@ -29,10 +32,24 @@ public class CameraScript : MonoBehaviour
         else{
             Debug.Log("Help");
         }
+        orgOffset = new Vector3(0, 1, -15.5f);
     }
 
 private void FixedUpdate()
     {
+        
+        if(!wormyRot){
+            if (BeanosPlayer.BeanosVelocity.x > 1 || BeanosPlayer.BeanosVelocity.x < 1){
+            lerpOffsetX = Mathf.MoveTowards(orgOffset.x, BeanosPlayer.BeanosVelocity.x * 2, xSmoothness * Time.deltaTime);
+            offset.x = lerpOffsetX;
+        }
+        
+        else{
+            offset.x = orgOffset.x;
+        }
+        }
+        
+
          if(FollowTreeGrowth == true){
             FollowBeanos = false;
             offset = new Vector3(0, 1, -15.5f);
@@ -52,9 +69,8 @@ private void FixedUpdate()
         if(rotateLeft){
             transform.RotateAround(Target.position, Vector3.up, rotateSpeed* Time.deltaTime);
         }
+        // Debug.Log(BeanosPlayer.BeanosVelocity);
         
-
-
         
     }
 
@@ -64,6 +80,7 @@ private void FixedUpdate()
         {
             SceneManager.LoadScene("MenuAlpha1");
         }
+
     }
     private IEnumerator RotateCamera(){
         rotateRight = true;
@@ -74,6 +91,18 @@ private void FixedUpdate()
         rotateLeft = true;
         offset = new Vector3(0, 1, -15.5f);    
         yield return new WaitForSeconds(1.5f);
-        rotateLeft = false;       
+        rotateLeft = false;
+        wormyRot = false;       
+    }
+    private void OnTriggerEnter(Collider other){
+        Debug.Log("poop");
+        if(other.gameObject.tag == "CameraAngler"){
+            Debug.Log("PENIS" + other.gameObject.GetComponent<FloatValue>().Value);
+        }
+    } private void OnTriggerExit(Collider other){
+        Debug.Log("poop");
+        if(other.gameObject.tag == "CameraAngler"){
+
+        }
     }
 }

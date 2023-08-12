@@ -14,6 +14,7 @@ public class BeanosPlayer : MonoBehaviour
     public CameraScript NewCamera;
     private bool executeBeanos;
     private bool beanosShallJump;
+    public static Vector3 BeanosVelocity;
     private bool sneakBlocker;
     private bool JumpRequestAllowed;
     private bool stabilizing;
@@ -62,6 +63,8 @@ public class BeanosPlayer : MonoBehaviour
     private bool AWPFORCE;
     [SerializeField] private AudioClip CoinSound;
     [SerializeField] private GameObject CoinEffect;
+    [SerializeField] private float CameraAnglerY;
+    [SerializeField] private float CameraAnglerZ;
 
     void Start()
     {
@@ -158,6 +161,8 @@ public class BeanosPlayer : MonoBehaviour
             beanosCanJump = false;
         }
 
+        BeanosVelocity = new Vector3(rigidbodycomponent.velocity.x, rigidbodycomponent.velocity.y, rigidbodycomponent.velocity.z);
+
        
 
     }
@@ -185,7 +190,7 @@ public class BeanosPlayer : MonoBehaviour
         if (AWPFORCE == true){
             rigidbodycomponent.AddForce(transform.up * 35);
         }
-
+        Debug.Log(BeanosVelocity);
 
     }
     
@@ -262,6 +267,9 @@ public class BeanosPlayer : MonoBehaviour
         if (other.gameObject.tag == "WATERPULSE"){
             AWPFORCE = true;
             NewCamera.Smoothness = 0.2f;
+        }
+        if(other.gameObject.tag == "CameraAngler"){
+            NewCamera.offset.z = NewCamera.offset.z + other.gameObject.GetComponent<FloatValue>().Value;
         }  
     }
     private void OnTriggerExit(Collider other){
@@ -269,13 +277,15 @@ public class BeanosPlayer : MonoBehaviour
             AWPFORCE = false;
             NewCamera.Smoothness = 0.125f;
         }  
+        if(other.gameObject.tag == "CameraAngler"){
+         NewCamera.offset.z = NewCamera.offset.z - other.gameObject.GetComponent<FloatValue>().Value; 
+        }
     }
 
     int beanosLongCount = 0;
    
    IEnumerator DoLongBeanos()  //  <-  its a standalone method
     {
-        Debug.Log("Long");
         LongBeanos();
         beanosLongCount = 1;
         yield return new WaitForSeconds(15);
@@ -283,7 +293,6 @@ public class BeanosPlayer : MonoBehaviour
         if(beanosLongCount == 0) {
             ReverseLongBeanos();
         }
-        Debug.Log("Not long");
     }
 
 

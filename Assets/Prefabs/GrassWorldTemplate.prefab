@@ -1434,6 +1434,10 @@ MonoBehaviour:
   FaceWaiponts: 1
   ChangeSpeed: 1
   loop: 0
+  fastReturn: 0
+  stayOnEnds: 0
+  stayTime: 5
+  trigger: 0
 --- !u!114 &3566762075696647190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3835,6 +3839,8 @@ MonoBehaviour:
   FatBenoFX: {fileID: 1000011797152326, guid: 69fbb8b01cfc7094a946e1310607366d, type: 3}
   CoinSound: {fileID: 8300000, guid: d16a2a08c7a6be6488efc6c7715b95f6, type: 3}
   CoinEffect: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 3}
+  CameraAnglerY: 0
+  CameraAnglerZ: 0
 --- !u!4 &8528490108383882350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
@@ -3927,6 +3933,10 @@ PrefabInstance:
     - target: {fileID: 7546196700993602442, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546196700993602443, guid: dd6232748e5e62e4c819f7acec3ce67f, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

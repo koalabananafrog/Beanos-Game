@@ -17,6 +17,7 @@ public class WayPointFollower : MonoBehaviour
     [SerializeField] private float stayTime = 5;
     private bool touch = false;
     private bool Waiting = false;
+    [SerializeField] private bool trigger;
 
 
     void Start(){
@@ -26,7 +27,8 @@ public class WayPointFollower : MonoBehaviour
     
     void Update()
     {
-        if (Vector3.Distance(transform.position, WayPoints[desiredWayPointIndex].transform.position) < 0.1f){
+        if(!trigger){
+              if (Vector3.Distance(transform.position, WayPoints[desiredWayPointIndex].transform.position) < 0.1f){
             if(loop){
                 if(WayPoints.Length - 1 == desiredWayPointIndex){
                     desiredWayPointIndex = 0;
@@ -94,6 +96,8 @@ public class WayPointFollower : MonoBehaviour
         if(touch){
             Debug.Log("Touch");
         }
+        }
+      
     }
 
     private void FixedUpdate(){
@@ -108,5 +112,10 @@ public class WayPointFollower : MonoBehaviour
         Debug.Log("start");
         currentSpeed = normalSpeed;
         Waiting = false;
+    }
+    private void OnCollisionEnter(Collision other){
+        if(other.gameObject.layer == 11){
+            trigger = false;
+        }
     }
 }

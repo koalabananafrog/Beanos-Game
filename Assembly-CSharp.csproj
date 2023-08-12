@@ -61,6 +61,7 @@
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunShoot.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Kart\EmitParticlesOnKartBounce.cs" />
      <Compile Include="Assets\Script\BenoRotation.cs" />
+     <Compile Include="Assets\Script\FloatValue.cs" />
      <Compile Include="Assets\Script\PositionFollow1.cs" />
      <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Script\BeanosPlayer.cs" />

@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: f74defbe1b9a23449aef9a881263fe0c, type: 3}
       propertyPath: m_Name
-      value: CATUS
+      value: CATUS Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f74defbe1b9a23449aef9a881263fe0c, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f74defbe1b9a23449aef9a881263fe0c, type: 3}
       propertyPath: m_LocalScale.x

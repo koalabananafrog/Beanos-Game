@@ -9,8 +9,6 @@ public class Particles : MonoBehaviour
     private Vector3 posHolderVector;
     void Start(){
         offset = (posHolderVector - transform.position) * -1;
-        Debug.Log(offset + "offset");
-        Debug.Log(posHolderVector + "posHolder");
     }
     private void FixedUpdate(){
         posHolderVector = posHolder.transform.position;
@@ -18,3 +16,4 @@ public class Particles : MonoBehaviour
         transform.position = new Vector3(iWantPos.x, transform.position.y, transform.position.z);
     }
 }
+    
