@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PositionFollow1 : MonoBehaviour
+public class PositionFollow1: MonoBehaviour
 {
     [SerializeField] private Transform PositionHolder;
     [SerializeField] private bool freezeAllPosExeptX = false;

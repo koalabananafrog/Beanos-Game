@@ -190,8 +190,6 @@ public class BeanosPlayer : MonoBehaviour
         if (AWPFORCE == true){
             rigidbodycomponent.AddForce(transform.up * 35);
         }
-        Debug.Log(BeanosVelocity);
-
     }
     
     
