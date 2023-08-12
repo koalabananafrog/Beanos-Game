@@ -25,6 +25,7 @@ public class BeanosPlayer : MonoBehaviour
     private float Jumppower = 300;
     public bool MakeLongBenoSound;
     [SerializeField] private GameObject Longbenopickupeffect; 
+    private float LongBenoDuration = 5f;
     public bool BenosIsLong;
     private bool longBeanosTime;
     public float targetTime = 100.0f;
@@ -144,7 +145,7 @@ public class BeanosPlayer : MonoBehaviour
             spider.gameObject.SetActive(true);
         }
 
-        
+        horizontalinput = Input.GetAxis("Horizontal") * Speed;
         
         if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true)
         {      
