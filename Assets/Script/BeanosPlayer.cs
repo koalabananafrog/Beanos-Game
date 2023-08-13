@@ -65,6 +65,7 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private GameObject CoinEffect;
     [SerializeField] private float CameraAnglerY;
     [SerializeField] private float CameraAnglerZ;
+    public Joystick joystick;
 
     void Start()
     {
@@ -84,6 +85,8 @@ public class BeanosPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Hor" + Input.GetAxis("Horizontal"));
+        Debug.Log("Joy" + joystick.Horizontal);
         //Input controlcenter
         if(executeBeanos == true){
             // Destroy(gameObject);
@@ -146,6 +149,7 @@ public class BeanosPlayer : MonoBehaviour
         }
 
         horizontalinput = Input.GetAxis("Horizontal") * Speed;
+        horizontalinput = joystick.Horizontal * Speed;
         
         if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true)
         {      
@@ -166,7 +170,6 @@ public class BeanosPlayer : MonoBehaviour
        
 
     }
-    
     
     private void FixedUpdate()
     {   

@@ -8705,6 +8705,18 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5584573246839238482, guid: 7421d3ce3a782354e972055c1d59f9d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 144.20001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584573246839238495, guid: 7421d3ce3a782354e972055c1d59f9d6, type: 3}
+      propertyPath: snapX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584573246839238495, guid: 7421d3ce3a782354e972055c1d59f9d6, type: 3}
+      propertyPath: snapY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5590253375064365429, guid: 7421d3ce3a782354e972055c1d59f9d6, type: 3}
       propertyPath: m_RootOrder
       value: 1
