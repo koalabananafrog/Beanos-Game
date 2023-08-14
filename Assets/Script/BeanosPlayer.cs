@@ -6,7 +6,7 @@ using TMPro;
 using Unity.Audio;
 using System;
 using System.Timers;
-
+using System.Runtime.CompilerServices;
 
 public class BeanosPlayer : MonoBehaviour
 {
@@ -65,7 +65,7 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private GameObject CoinEffect;
     [SerializeField] private float CameraAnglerY;
     [SerializeField] private float CameraAnglerZ;
-    public Joystick joystick;
+    public FixedJoystick joystick;
 
     void Start()
     {
@@ -81,12 +81,23 @@ public class BeanosPlayer : MonoBehaviour
         sneakingLongbeanos = new Vector3(2, 2.4f, 2);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
     }
-
+    private bool joystickDown;
+    private bool joystickUp;
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Hor" + Input.GetAxis("Horizontal"));
-        Debug.Log("Joy" + joystick.Horizontal);
+        if (joystick.Vertical <= -0.5){
+            joystickDown = true;
+        }else{
+            joystickDown = false;
+        }
+        if (joystick.Vertical >= 0.7){
+            joystickUp = true;
+        }else{
+            joystickUp = false;
+        }
+        Debug.Log("s" + joystick.Vertical);
+        Input.GetKey(KeyCode.D);
         //Input controlcenter
         if(executeBeanos == true){
             // Destroy(gameObject);
@@ -98,7 +109,7 @@ public class BeanosPlayer : MonoBehaviour
 
 
         // Stabilize
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || joystickUp){
             float tiltAroundZ = 0 * tiltAngle;
             float tiltAroundX = 0 * tiltAngle;
             Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
@@ -112,30 +123,34 @@ public class BeanosPlayer : MonoBehaviour
 
 
         // Move right
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (horizontalinput > 0.3f || Input.GetKey(KeyCode.D))
         {
             transform.Rotate(new Vector3(transform.rotation.x + Rightturnspeed, 0, 0) * Time.deltaTime);
         }
         // Move left
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (horizontalinput < -0.3f || Input.GetKey(KeyCode.A))
         {
             transform.Rotate(new Vector3(transform.rotation.x + Leftturnspeed, 0, 0) * Time.deltaTime);
         }
 
 
         // Sneak down
-        if (Input.GetKey(KeyCode.S) && !sneaking && !sneakBlocker || Input.GetKey(KeyCode.DownArrow) && !sneaking && !sneakBlocker){
+        if ( joystickDown && !sneaking && !sneakBlocker) {
             transform.localScale = Sneakingbeanos;
-            Speed = 2.5f;
+            Speed = 3.5f;
             sneaking = true; 
         } 
+        // Input.GetKey(KeyCode.S) && !sneaking && !sneakBlocker ||
         // Sneak up
-        if (!Input.GetKey(KeyCode.S) && sneaking || Input.GetKey(KeyCode.DownArrow) && sneaking) {
+        
+        if (!joystickDown && sneaking){
             transform.localScale = Normalbeanos;
+            Speed = 2.5f;
             sneaking = false; 
         }
+        // !Input.GetKey(KeyCode.S) && sneaking || 
 
-       
+    //    || joystick.Vertical > -0.1 && sneaking
         // Death void detection
         if(dieBeanos == true)
         {
@@ -148,8 +163,9 @@ public class BeanosPlayer : MonoBehaviour
             spider.gameObject.SetActive(true);
         }
 
-        horizontalinput = Input.GetAxis("Horizontal") * Speed;
-        horizontalinput = joystick.Horizontal * Speed;
+       
+        
+        
         
         if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true)
         {      
@@ -167,12 +183,17 @@ public class BeanosPlayer : MonoBehaviour
 
         BeanosVelocity = new Vector3(rigidbodycomponent.velocity.x, rigidbodycomponent.velocity.y, rigidbodycomponent.velocity.z);
 
-       
+       Debug.Log("HOr" + joystick.Horizontal);
 
     }
     
     private void FixedUpdate()
     {   
+         if(Input.GetAxis("Horizontal") !=0){
+            horizontalinput = Input.GetAxis("Horizontal") * Speed;
+        }else{
+            horizontalinput = joystick.Horizontal * Speed;
+        }
         if(makeCollisionFalse == true){
             rigidbodycomponent.detectCollisions = false;
         }
@@ -202,7 +223,7 @@ public class BeanosPlayer : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            beanosGrounds = beanosGrounds + 1;
+            beanosGrounds++;
             Debug.Log(beanosGrounds);
         }
 
