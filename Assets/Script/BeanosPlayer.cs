@@ -167,9 +167,10 @@ public class BeanosPlayer : MonoBehaviour
         
         
         
-        if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true)
+        if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true || jumpButton && beanosCanJump == true)
         {      
              beanosShallJump = true;
+             jumpButton = false;
         }
 
         // Checking if beanos is (allowed) to jump
@@ -203,6 +204,7 @@ public class BeanosPlayer : MonoBehaviour
             rigidbodycomponent.AddForce(Vector3.up * Jumppower * Time.deltaTime, ForceMode.VelocityChange);
             beanosShallJump = false;
             AudioSource.PlayClipAtPoint(jumpSound, MainCamera.transform.position);
+            
             
             if(exploJump == true){
                 Instantiate(FatBenoFX, transform.position + new Vector3(0, -1, 0), transform.rotation);
@@ -401,6 +403,10 @@ public class BeanosPlayer : MonoBehaviour
         exploJump = false;
         NewCamera.Smoothness = 0.125f;
     }   
+    private bool jumpButton;
+    public void JumpButton(){
+        jumpButton = true;
+    }
 
     // private void FinishSceneCameraFunction(){
     //     NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , -10);

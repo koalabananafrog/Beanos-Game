@@ -1802,6 +1802,7 @@ Transform:
   - {fileID: 3421024269913962873}
   - {fileID: 8110277947240619597}
   - {fileID: 7314016938899981444}
+  - {fileID: 4892349709326957117}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3613,6 +3614,93 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 38335279662569219, guid: 34d3f526198dae440bb2ce6005d86055, type: 3}
   m_PrefabInstance: {fileID: 638176921541873846}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2327494969604430543
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1317821932237663499}
+    m_Modifications:
+    - target: {fileID: 1837036583791391498, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_Name
+      value: Joystick 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2948519759310199794}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JumpButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.151683
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -58.20166
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 106.386894
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522266920073480399, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2948519759753800182}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+--- !u!114 &2798781141225789405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 476159768219913490, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+  m_PrefabInstance: {fileID: 2327494969604430543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &4892349709326957117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+  m_PrefabInstance: {fileID: 2327494969604430543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3454782947848171130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3841,7 +3929,7 @@ MonoBehaviour:
   CoinEffect: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 3}
   CameraAnglerY: 0
   CameraAnglerZ: 0
-  joystick: {fileID: 0}
+  joystick: {fileID: 2798781141225789405}
 --- !u!4 &8528490108383882350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}
