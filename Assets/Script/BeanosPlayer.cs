@@ -7,6 +7,7 @@ using Unity.Audio;
 using System;
 using System.Timers;
 using System.Runtime.CompilerServices;
+using UnityEngine.UI;
 
 public class BeanosPlayer : MonoBehaviour
 {
@@ -66,7 +67,9 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private float CameraAnglerY;
     [SerializeField] private float CameraAnglerZ;
     public FixedJoystick joystick;
-
+    public JumpButtonS JumpButtonS;
+    private bool heyDontSpamJump;
+    
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -86,15 +89,10 @@ public class BeanosPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (joystick.Vertical <= -0.5){
-            joystickDown = true;
-        }else{
-            joystickDown = false;
-        }
-        if (joystick.Vertical >= 0.7){
-            joystickUp = true;
-        }else{
-            joystickUp = false;
+        if(JumpButtonS.buttonPressed && !heyDontSpamJump){
+            jumpButton = true;
+            heyDontSpamJump = true;
+            Debug.Log("Snorkel");
         }
         Debug.Log("s" + joystick.Vertical);
         Input.GetKey(KeyCode.D);
@@ -106,7 +104,6 @@ public class BeanosPlayer : MonoBehaviour
         if(Dead){
             return;
         }
-
 
         // Stabilize
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || joystickUp){
@@ -166,11 +163,12 @@ public class BeanosPlayer : MonoBehaviour
        
         
         
-        
+        // private bool heyDontSpamJump;
         if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true || jumpButton && beanosCanJump == true)
         {      
              beanosShallJump = true;
              jumpButton = false;
+             heyDontSpamJump = false;
         }
 
         // Checking if beanos is (allowed) to jump
@@ -204,7 +202,7 @@ public class BeanosPlayer : MonoBehaviour
             rigidbodycomponent.AddForce(Vector3.up * Jumppower * Time.deltaTime, ForceMode.VelocityChange);
             beanosShallJump = false;
             AudioSource.PlayClipAtPoint(jumpSound, MainCamera.transform.position);
-            
+
             
             if(exploJump == true){
                 Instantiate(FatBenoFX, transform.position + new Vector3(0, -1, 0), transform.rotation);
@@ -404,9 +402,9 @@ public class BeanosPlayer : MonoBehaviour
         NewCamera.Smoothness = 0.125f;
     }   
     private bool jumpButton;
-    public void JumpButton(){
-        jumpButton = true;
-    }
+    // public void JumpButton(){
+    //     jumpButton = true;
+    // }
 
     // private void FinishSceneCameraFunction(){
     //     NewCamera.offset = NewCamera.offset + new Vector3(0, 0 , -10);

@@ -667,6 +667,37 @@ Transform:
   m_Father: {fileID: 1673456333953650111}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0.1619904, y: -100.758385, z: -38.6247}
+--- !u!1 &2200022307789333292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3105448026683086236}
+  m_Layer: 0
+  m_Name: JumpButtonCatalyst
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3105448026683086236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200022307789333292}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.970886, y: -47.224342, z: 99.81829}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1317821932237663499}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2320132545769025722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1834,7 @@ Transform:
   - {fileID: 8110277947240619597}
   - {fileID: 7314016938899981444}
   - {fileID: 4892349709326957117}
+  - {fileID: 3105448026683086236}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3627,12 +3659,32 @@ PrefabInstance:
       value: Joystick 1
       objectReference: {fileID: 0}
     - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2948519759310199794}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: JumpButton
+      value: BroadcastMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Component, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331928871696518043, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BeanosPlayer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7181537661162414322, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
       propertyPath: m_RootOrder
@@ -3685,6 +3737,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+--- !u!1 &1040771250148938070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3331928871696518041, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+  m_PrefabInstance: {fileID: 2327494969604430543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6943695902957290628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040771250148938070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0845b72717ab6341bcfee5ec5ea4662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed: 0
 --- !u!114 &2798781141225789405 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 476159768219913490, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
@@ -3930,6 +4000,7 @@ MonoBehaviour:
   CameraAnglerY: 0
   CameraAnglerZ: 0
   joystick: {fileID: 2798781141225789405}
+  JumpButtonS: {fileID: 6943695902957290628}
 --- !u!4 &8528490108383882350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5714548622136835718, guid: e13f7dcb59ac4eb47bacb9ea734c2f38, type: 3}

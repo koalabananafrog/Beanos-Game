@@ -74,6 +74,7 @@
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Script\ObjectAdoptPlayer.cs" />
+    <Compile Include="Assets\Script\JumpButtonS.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\AssetStoreAssets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\Script\CameraScript.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Script\FloatValue.cs" />
     <Compile Include="Assets\Script\PositionFollow1.cs" />
+    <Compile Include="Assets\ButtonNew.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Script\BeanosPlayer.cs" />
