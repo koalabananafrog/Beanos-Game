@@ -20,7 +20,7 @@ public class BeanosPlayer : MonoBehaviour
     private bool stabilizing;
     private int beanosGrounds;
     private Vector3 FatBenobeanos;
-    private float Jumppower = 300;
+    private float Jumppower = 350;
     public bool MakeLongBenoSound;
     [SerializeField] private GameObject Longbenopickupeffect; 
     public bool BenosIsLong;
