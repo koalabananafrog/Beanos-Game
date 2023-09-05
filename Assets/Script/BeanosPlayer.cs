@@ -84,6 +84,21 @@ public class BeanosPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Joystick vertical
+        if(joystick.Vertical > 0.6){
+            joystickUp = true;
+        }
+        else{
+            joystickUp = false;
+        }
+        if(joystick.Vertical < -0.6){
+            joystickDown = true;
+        }
+        else{
+            joystickDown = false;
+        }
+
+
         //Joystick JumpButton Detection
         if(JumpButtonS.buttonPressed){
             jumpButton = true;
@@ -204,8 +219,6 @@ public class BeanosPlayer : MonoBehaviour
         }
 
         BeanosVelocity = new Vector3(rigidbodycomponent.velocity.x, rigidbodycomponent.velocity.y, rigidbodycomponent.velocity.z);
-
-       Debug.Log("HOr" + joystick.Horizontal);
        
        
 
