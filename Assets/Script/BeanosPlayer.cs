@@ -17,32 +17,24 @@ public class BeanosPlayer : MonoBehaviour
     private bool beanosShallJump;
     public static Vector3 BeanosVelocity;
     private bool sneakBlocker;
-    private bool JumpRequestAllowed;
     private bool stabilizing;
-    private bool JumpRequest;
     private int beanosGrounds;
-    private bool beanosCouldJumpBefore;
     private Vector3 FatBenobeanos;
     private float Jumppower = 300;
     public bool MakeLongBenoSound;
     [SerializeField] private GameObject Longbenopickupeffect; 
-    private float LongBenoDuration = 5f;
     public bool BenosIsLong;
-    private bool longBeanosTime;
     public float targetTime = 100.0f;
     private bool Dead;
     float smooth = 5.0f;
     float tiltAngle = 60.0f;
-    private bool _ismoving;
     private float Leftturnspeed;
     private float Rightturnspeed;
     private float Speed;
     [SerializeField] private AudioClip LongBenoSound;
     [SerializeField] private AudioClip FatBenoSound;
     public AudioClip jumpSound;
-    private bool MakeNoise;
     private Vector3 Longbeanos;
-    private Vector3 sneakingLongbeanos;
     private Vector3 deadBeanos;
     private Vector3 Normalbeanos;
     private Vector3 Sneakingbeanos;
@@ -50,10 +42,7 @@ public class BeanosPlayer : MonoBehaviour
     private bool sendDeathSpider;
     private bool sneaking;
     [SerializeField] private GameObject RespawnMenu;
-    private bool Ddown;
-    private bool Adown;
     private bool beanosCanJump;
-    private bool jumpKeyWasPressed;
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
     private Camera MainCamera;
@@ -69,7 +58,10 @@ public class BeanosPlayer : MonoBehaviour
     public FixedJoystick joystick;
     public JumpButtonS JumpButtonS;
     private bool heyDontSpamJump;
-    
+    private float jumpedInt;
+    private float groundedInt = 0;
+    private float possibleJump;
+    private float one = 1;
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -81,21 +73,52 @@ public class BeanosPlayer : MonoBehaviour
         Sneakingbeanos = new Vector3(0.7f, 0.6f, 0.7f);
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
-        sneakingLongbeanos = new Vector3(2, 2.4f, 2);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
     }
+    bool jumpSpam;
     private bool joystickDown;
     private bool joystickUp;
+    private bool theresPossibleJump;
+    private bool jumped;
+    private bool airborn;
     // Update is called once per frame
     void Update()
     {
-        if(JumpButtonS.buttonPressed && !heyDontSpamJump){
+        //Joystick JumpButton Detection
+        if(JumpButtonS.buttonPressed){
             jumpButton = true;
-            heyDontSpamJump = true;
-            Debug.Log("Snorkel");
+        }else{
+            jumpButton = false;
         }
-        Debug.Log("s" + joystick.Vertical);
-        Input.GetKey(KeyCode.D);
+        if(jumpButton){
+            Debug.Log("?True");
+        }else{
+            Debug.Log("?False");
+        }
+        
+
+        // Joystick Jump Spam Block
+        if(!groundedBool){
+            airborn = true;
+        }
+        if(groundedBool && airborn){
+            jumped = false;
+            airborn = false;
+        }
+        if(groundedBool && !jumped){
+            theresPossibleJump = true;
+        }
+        else{
+            theresPossibleJump = false;
+        }
+        if(theresPossibleJump){
+            jumpSpamBlock = false;
+        }
+        else{
+            jumpSpamBlock = true;
+        }
+
+
         //Input controlcenter
         if(executeBeanos == true){
             // Destroy(gameObject);
@@ -104,6 +127,7 @@ public class BeanosPlayer : MonoBehaviour
         if(Dead){
             return;
         }
+
 
         // Stabilize
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || joystickUp){
@@ -163,12 +187,11 @@ public class BeanosPlayer : MonoBehaviour
        
         
         
-        // private bool heyDontSpamJump;
-        if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true || jumpButton && beanosCanJump == true)
+        //private bool heyDontSpamJump;
+        if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true || jumpButton && beanosCanJump == true && !jumpSpamBlock)
         {      
              beanosShallJump = true;
-             jumpButton = false;
-             heyDontSpamJump = false;
+             jumped = true;
         }
 
         // Checking if beanos is (allowed) to jump
@@ -183,11 +206,16 @@ public class BeanosPlayer : MonoBehaviour
         BeanosVelocity = new Vector3(rigidbodycomponent.velocity.x, rigidbodycomponent.velocity.y, rigidbodycomponent.velocity.z);
 
        Debug.Log("HOr" + joystick.Horizontal);
+       
+       
 
     }
     
     private void FixedUpdate()
     {   
+        
+         
+
          if(Input.GetAxis("Horizontal") !=0){
             horizontalinput = Input.GetAxis("Horizontal") * Speed;
         }else{
@@ -216,15 +244,21 @@ public class BeanosPlayer : MonoBehaviour
         }
     }
     
-    
-    
+    private bool jumpSpamBlock;
+    private bool groundedBool;
     //COLLISION STATION!
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == 3)
         {
-            beanosGrounds++;
+            
             Debug.Log(beanosGrounds);
+            if(beanosGrounds == 0){
+                groundedBool = true;
+                Debug.Log("I DID IT");
+            }
+            beanosGrounds++;
+
         }
 
         if (collision.gameObject.layer == 6)
@@ -236,15 +270,15 @@ public class BeanosPlayer : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            beanosGrounds = beanosGrounds - 1;
+            beanosGrounds--;
             Debug.Log(beanosGrounds);
+            jumpSpamBlock = true;
+            if(beanosGrounds == 0){
+                groundedBool = false;
+                Debug.Log("I STILL DID IT");
+            }
         }
     }
-
-
-    
-    
-    
     
     public static int LONGBEANOS = 8;
     public static int COIN = 7;
@@ -325,7 +359,6 @@ public class BeanosPlayer : MonoBehaviour
         NewCamera.Smoothness = 0.2f;
         AudioSource.PlayClipAtPoint(LongBenoSound, MainCamera.transform.position);
         transform.localScale = Longbeanos;
-        MakeNoise = true;
         Speed = Speed++ ;
         Rightturnspeed = Rightturnspeed + 30;
         Leftturnspeed = Leftturnspeed - 30;
