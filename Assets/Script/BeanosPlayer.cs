@@ -75,7 +75,6 @@ public class BeanosPlayer : MonoBehaviour
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
     }
-    bool jumpSpam;
     private bool joystickDown;
     private bool joystickUp;
     private bool theresPossibleJump;

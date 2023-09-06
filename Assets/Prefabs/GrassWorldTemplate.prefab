@@ -667,37 +667,6 @@ Transform:
   m_Father: {fileID: 1673456333953650111}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0.1619904, y: -100.758385, z: -38.6247}
---- !u!1 &2200022307789333292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3105448026683086236}
-  m_Layer: 0
-  m_Name: JumpButtonCatalyst
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3105448026683086236
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2200022307789333292}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.970886, y: -47.224342, z: 99.81829}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1317821932237663499}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2320132545769025722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,7 +1803,6 @@ Transform:
   - {fileID: 8110277947240619597}
   - {fileID: 7314016938899981444}
   - {fileID: 4892349709326957117}
-  - {fileID: 3105448026683086236}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
