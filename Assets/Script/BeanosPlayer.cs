@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class BeanosPlayer : MonoBehaviour
 {
+    public GameObject CoinBar;
     private bool exploJump;
     public CameraScript NewCamera;
     private bool executeBeanos;
@@ -38,7 +39,7 @@ public class BeanosPlayer : MonoBehaviour
     private Vector3 deadBeanos;
     private Vector3 Normalbeanos;
     private Vector3 Sneakingbeanos;
-    private float Coins;
+    public float Coins;
     private bool sendDeathSpider;
     private bool sneaking;
     [SerializeField] private GameObject RespawnMenu;
@@ -80,9 +81,17 @@ public class BeanosPlayer : MonoBehaviour
     private bool theresPossibleJump;
     private bool jumped;
     private bool airborn;
+
+    public GameObject LongBeanosButton;
     // Update is called once per frame
     void Update()
     {
+
+        //CoinBar Update
+        CoinBar.GetComponent<Slider>().value = Coins;
+        if(Coins >= 20){
+            LongBeanosButton.active = true;
+        }
         // Joystick vertical
         if(joystick.Vertical > 0.8){
             joystickUp = true;

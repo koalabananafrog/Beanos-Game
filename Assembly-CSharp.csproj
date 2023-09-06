@@ -94,6 +94,7 @@
     <Compile Include="Assets\Script\BeanosEffects.cs" />
     <Compile Include="Assets\Script\HomingRocket.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Script\InstantiateLongBeno.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
