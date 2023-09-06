@@ -84,7 +84,7 @@ public class BeanosPlayer : MonoBehaviour
     void Update()
     {
         // Joystick vertical
-        if(joystick.Vertical > 0.6){
+        if(joystick.Vertical > 0.8){
             joystickUp = true;
         }
         else{

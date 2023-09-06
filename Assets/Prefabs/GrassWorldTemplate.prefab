@@ -3622,6 +3622,46 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1317821932237663499}
     m_Modifications:
+    - target: {fileID: 476159767432415514, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432415514, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432415514, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432416997, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7071
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432416997, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7071
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432416997, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7071
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432416997, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0045617
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159767432416997, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0045617
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159768219913503, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 146
+      objectReference: {fileID: 0}
+    - target: {fileID: 476159768219913503, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 1837036583791391498, guid: 1941c8579b5ecf343ba7f990985eb850, type: 3}
       propertyPath: m_Name
       value: Joystick 1
