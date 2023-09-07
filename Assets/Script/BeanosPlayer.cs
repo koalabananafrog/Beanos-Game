@@ -75,6 +75,7 @@ public class BeanosPlayer : MonoBehaviour
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
+        Coins = 0;
     }
     private bool joystickDown;
     private bool joystickUp;
@@ -89,7 +90,7 @@ public class BeanosPlayer : MonoBehaviour
 
         //CoinBar Update
         CoinBar.GetComponent<Slider>().value = Coins;
-        if(Coins >= 5){
+        if(Coins >= 8){
             LongBeanosButton.active = true;
         }
         // Joystick vertical

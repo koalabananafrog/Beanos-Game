@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BLevel1.unity
     guid: 2c898640ee9466444a49c4b7fe191ace
   - enabled: 1
+    path: Assets/Scenes/BLevel1 1.5.unity
+    guid: a8d9d22a965b1fe41a84ba493699ecb3
+  - enabled: 1
     path: Assets/Scenes/Blevel2.unity
     guid: 6500333f5e9cf6c4ca5ac3f81e08d9c3
   - enabled: 1

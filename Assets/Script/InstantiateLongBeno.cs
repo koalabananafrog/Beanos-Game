@@ -9,7 +9,7 @@ public class InstantiateLongBeno : MonoBehaviour
 
     public void LongBeno(){
         Instantiate(LongBenoPW, Beanos.transform.position, Beanos.transform.rotation);
-        Beanos.GetComponent<BeanosPlayer>().Coins = Beanos.GetComponent<BeanosPlayer>().Coins - 5;
+        Beanos.GetComponent<BeanosPlayer>().Coins = Beanos.GetComponent<BeanosPlayer>().Coins - 8;
         gameObject.SetActive(false);
     }
 }
