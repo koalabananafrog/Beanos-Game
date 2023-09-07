@@ -4126,6 +4126,10 @@ PrefabInstance:
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4480307774569216672, guid: 135819fe3f6ea454fb50059aad08b5e6, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4480307774638856820, guid: 135819fe3f6ea454fb50059aad08b5e6, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4382,6 +4386,7 @@ MonoBehaviour:
   LongBenoSound: {fileID: 8300000, guid: 848e97bcd9288d44f9aba5d69f2aad15, type: 3}
   FatBenoSound: {fileID: 8300000, guid: 19291fcf19b42504985bb1977197ea58, type: 3}
   jumpSound: {fileID: 8300000, guid: 1cb5929485962d84795b3830a7e30c89, type: 3}
+  Coins: 0
   RespawnMenu: {fileID: 2948519758058194901}
   makeCollisionFalse: 0
   spider: {fileID: 3566762075407666397}

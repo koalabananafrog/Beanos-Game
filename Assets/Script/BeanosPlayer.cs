@@ -89,7 +89,7 @@ public class BeanosPlayer : MonoBehaviour
 
         //CoinBar Update
         CoinBar.GetComponent<Slider>().value = Coins;
-        if(Coins >= 20){
+        if(Coins >= 5){
             LongBeanosButton.active = true;
         }
         // Joystick vertical
