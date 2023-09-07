@@ -54,15 +54,11 @@ public class BeanosPlayer : MonoBehaviour
     private bool AWPFORCE;
     [SerializeField] private AudioClip CoinSound;
     [SerializeField] private GameObject CoinEffect;
-    [SerializeField] private float CameraAnglerY;
-    [SerializeField] private float CameraAnglerZ;
+    // [SerializeField] private float CameraAnglerY;
+    // [SerializeField] private float CameraAnglerZ;
     public FixedJoystick joystick;
     public JumpButtonS JumpButtonS;
-    private bool heyDontSpamJump;
-    private float jumpedInt;
-    private float groundedInt = 0;
-    private float possibleJump;
-    private float one = 1;
+    public GameObject DataBase;
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -75,7 +71,7 @@ public class BeanosPlayer : MonoBehaviour
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
-        Coins = 0;
+        Coins = DataBase.Coins;
     }
     private bool joystickDown;
     private bool joystickUp;
