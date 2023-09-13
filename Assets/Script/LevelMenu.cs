@@ -11,7 +11,7 @@ public class LevelMenu : MonoBehaviour
     public void Levelone()
     {
         if(levelStatus >= 2){
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Blevel1");
         }
         else{
             Debug.Log("false");
@@ -21,7 +21,7 @@ public class LevelMenu : MonoBehaviour
     public void Leveltwo()
     {
         if(levelStatus >= 3){
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Blevel 1.5");
         }
         else{
             Debug.Log(levelStatus + "status");
@@ -30,7 +30,7 @@ public class LevelMenu : MonoBehaviour
     public void LevelThree()
     {
          if(levelStatus >= 4){
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("Blevel2");
         }else{
             Debug.Log(levelStatus + "status");
         }
@@ -38,7 +38,7 @@ public class LevelMenu : MonoBehaviour
     public void LevelFour()
     {
          if(levelStatus >= 5){
-            SceneManager.LoadScene("Level4");
+            SceneManager.LoadScene("Blevel3");
         }else{
             Debug.Log(levelStatus + "status");
         }

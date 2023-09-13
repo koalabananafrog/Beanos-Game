@@ -6,10 +6,9 @@ public class InstantiateLongBeno : MonoBehaviour
 {
     public GameObject LongBenoPW;
     public GameObject Beanos;
-
     public void LongBeno(){
         Instantiate(LongBenoPW, Beanos.transform.position, Beanos.transform.rotation);
-        Beanos.GetComponent<BeanosPlayer>().Coins = Beanos.GetComponent<BeanosPlayer>().Coins - 8;
+        FindObjectOfType<DataBase>().Coins = FindObjectOfType<DataBase>().Coins - 8;
         gameObject.SetActive(false);
     }
 }

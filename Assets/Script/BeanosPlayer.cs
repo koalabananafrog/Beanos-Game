@@ -39,7 +39,7 @@ public class BeanosPlayer : MonoBehaviour
     private Vector3 deadBeanos;
     private Vector3 Normalbeanos;
     private Vector3 Sneakingbeanos;
-    public float Coins;
+    public float coins;
     private bool sendDeathSpider;
     private bool sneaking;
     [SerializeField] private GameObject RespawnMenu;
@@ -54,11 +54,10 @@ public class BeanosPlayer : MonoBehaviour
     private bool AWPFORCE;
     [SerializeField] private AudioClip CoinSound;
     [SerializeField] private GameObject CoinEffect;
-    // [SerializeField] private float CameraAnglerY;
-    // [SerializeField] private float CameraAnglerZ;
+    [SerializeField] private float CameraAnglerY;
+    [SerializeField] private float CameraAnglerZ;
     public FixedJoystick joystick;
     public JumpButtonS JumpButtonS;
-    public GameObject DataBase;
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -71,7 +70,7 @@ public class BeanosPlayer : MonoBehaviour
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
-        Coins = DataBase.Coins;
+        
     }
     private bool joystickDown;
     private bool joystickUp;
@@ -85,9 +84,10 @@ public class BeanosPlayer : MonoBehaviour
     {
 
         //CoinBar Update
-        CoinBar.GetComponent<Slider>().value = Coins;
-        if(Coins >= 8){
-            LongBeanosButton.active = true;
+        coins = FindObjectOfType<DataBase>().Coins;
+        CoinBar.GetComponent<Slider>().value = coins;
+        if(coins >= 8){
+            LongBeanosButton.SetActive(true);
         }
         // Joystick vertical
         if(joystick.Vertical > 0.8){
@@ -102,6 +102,9 @@ public class BeanosPlayer : MonoBehaviour
         else{
             joystickDown = false;
         }
+        if(Input.GetKey(KeyCode.K)){
+            Debug.Log("Coins" + coins);
+        }
 
 
         //Joystick JumpButton Detection
@@ -110,12 +113,6 @@ public class BeanosPlayer : MonoBehaviour
         }else{
             jumpButton = false;
         }
-        if(jumpButton){
-            Debug.Log("?True");
-        }else{
-            Debug.Log("?False");
-        }
-        
 
         // Joystick Jump Spam Block
         if(!groundedBool){
@@ -142,7 +139,7 @@ public class BeanosPlayer : MonoBehaviour
         //Input controlcenter
         if(executeBeanos == true){
             // Destroy(gameObject);
-            Debug.Log("sadasdawedfaf");
+
         }
         if(Dead){
             return;
@@ -269,11 +266,8 @@ public class BeanosPlayer : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            
-            Debug.Log(beanosGrounds);
             if(beanosGrounds == 0){
                 groundedBool = true;
-                Debug.Log("I DID IT");
             }
             beanosGrounds++;
 
@@ -289,11 +283,9 @@ public class BeanosPlayer : MonoBehaviour
         if(collision.gameObject.layer == 3)
         {
             beanosGrounds--;
-            Debug.Log(beanosGrounds);
             jumpSpamBlock = true;
             if(beanosGrounds == 0){
                 groundedBool = false;
-                Debug.Log("I STILL DID IT");
             }
         }
     }
@@ -307,10 +299,9 @@ public class BeanosPlayer : MonoBehaviour
         if (other.gameObject.layer == COIN)
         {
             Destroy(other.gameObject);
-            Coins++;
+            FindObjectOfType<DataBase>().Coins++;
             AudioSource.PlayClipAtPoint(CoinSound, MainCamera.transform.position);
             Instantiate(CoinEffect, transform.position, transform.rotation);
-            Debug.Log(Coins);
         }
         if (other.gameObject.layer == 13){
             dieBeanos = true;
