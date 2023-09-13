@@ -12,8 +12,8 @@ public class FinishLineScript : MonoBehaviour
     public CameraScript cameraScript;
     private bool launchBall = false;
     private float TreeCount = 1;
-
-    
+    public static int levelStatus;
+    private int Q;
     
 
      private void OnTriggerEnter(Collider other){
@@ -24,6 +24,11 @@ public class FinishLineScript : MonoBehaviour
     }
      private void DoVictoryScene()
      {
+
+        Q = SceneManager.GetActiveScene().buildIndex + 1; 
+        if(Q>levelStatus){
+            levelStatus = Q;
+        }
         if (TreeCount == 1)
         {
             Instantiate(FetusBeanosTree, transform.position, transform.rotation);

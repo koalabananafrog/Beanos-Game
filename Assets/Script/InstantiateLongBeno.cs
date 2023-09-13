@@ -8,7 +8,7 @@ public class InstantiateLongBeno : MonoBehaviour
     public GameObject Beanos;
     public void LongBeno(){
         Instantiate(LongBenoPW, Beanos.transform.position, Beanos.transform.rotation);
-        FindObjectOfType<DataBase>().Coins = FindObjectOfType<DataBase>().Coins - 8;
+        FindObjectOfType<DataBase>().Coins = FindObjectOfType<DataBase>().Coins - 11;
         gameObject.SetActive(false);
     }
 }

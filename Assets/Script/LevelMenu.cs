@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
-    public static int levelStatus = 2;
+    public static int levelStatus = 3;
+    public void Update(){
+        if(Input.GetKey(KeyCode.K)){
+            Debug.Log("K" + + levelStatus);
+        }
+    }
     
     public void Levelone()
     {
@@ -21,7 +26,7 @@ public class LevelMenu : MonoBehaviour
     public void Leveltwo()
     {
         if(levelStatus >= 3){
-            SceneManager.LoadScene("Blevel 1.5");
+            SceneManager.LoadScene(3);
         }
         else{
             Debug.Log(levelStatus + "status");
@@ -30,7 +35,7 @@ public class LevelMenu : MonoBehaviour
     public void LevelThree()
     {
          if(levelStatus >= 4){
-            SceneManager.LoadScene("Blevel2");
+            SceneManager.LoadScene(4);
         }else{
             Debug.Log(levelStatus + "status");
         }
@@ -38,7 +43,7 @@ public class LevelMenu : MonoBehaviour
     public void LevelFour()
     {
          if(levelStatus >= 5){
-            SceneManager.LoadScene("Blevel3");
+            SceneManager.LoadScene(5);
         }else{
             Debug.Log(levelStatus + "status");
         }
@@ -46,7 +51,7 @@ public class LevelMenu : MonoBehaviour
     public void LevelFive()
     {
          if(levelStatus >= 6){
-            SceneManager.LoadScene("Level5");
+            SceneManager.LoadScene(6);
         }else{
             Debug.Log(levelStatus + "status");
         }
@@ -54,7 +59,7 @@ public class LevelMenu : MonoBehaviour
     public void LevelSix()
     {
          if(levelStatus >= 7){
-            SceneManager.LoadScene("Level6");
+            SceneManager.LoadScene(7);
         }else{
             Debug.Log(levelStatus + "status");
         }
