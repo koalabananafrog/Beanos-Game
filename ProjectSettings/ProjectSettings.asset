@@ -823,11 +823,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 687c0fbf-189b-4173-b13b-e3aa97b9c50d
+  cloudProjectId: ef7383c8-4cd9-443b-a581-c2e84ed87a75
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: My project (1)
-  organizationId: beanosheadquartes
+  projectName: Beanos
+  organizationId: bafor
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

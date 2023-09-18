@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     private string _gameID;
 
     void Awake(){
-        InitializeAds();
+
     }
     
 }
