@@ -48,7 +48,7 @@ public class BeanosPlayer : MonoBehaviour
     private Rigidbody rigidbodycomponent;
     private Camera MainCamera;
     public bool makeCollisionFalse;
-    private bool dieBeanos;
+    public bool dieBeanos;
     [SerializeField] private Transform spider;
     [SerializeField] private GameObject FatBenoFX;
     private bool AWPFORCE;
@@ -70,6 +70,7 @@ public class BeanosPlayer : MonoBehaviour
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
         FatBenobeanos = new Vector3(2, 1, 2.2f);
+
         
     }
     private bool joystickDown;
@@ -212,7 +213,7 @@ public class BeanosPlayer : MonoBehaviour
         }
 
         // Checking if beanos is (allowed) to jump
-        if (beanosGrounds > 0 && !sneaking && !stabilizing)
+        if (beanosGrounds > 0 && !sneaking)
         {
             beanosCanJump = true;
         } 
