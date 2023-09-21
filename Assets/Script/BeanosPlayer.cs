@@ -81,9 +81,13 @@ public class BeanosPlayer : MonoBehaviour
 
     public GameObject LongBeanosButton;
     // Update is called once per frame
+    public bool freezeX = false;
     void Update()
     {
-
+        //FreezeX
+        if(freezeX){
+            rigidbodycomponent.constraints = RigidbodyConstraints.FreezePositionX;
+        }
         //CoinBar Update
         coins = FindObjectOfType<DataBase>().Coins;
         CoinBar.GetComponent<Slider>().value = coins;
@@ -226,7 +230,7 @@ public class BeanosPlayer : MonoBehaviour
        
 
     }
-    
+    private Vector3 SoundOffset = new Vector3(0, 5, 0);
     private void FixedUpdate()
     {   
         
@@ -250,7 +254,7 @@ public class BeanosPlayer : MonoBehaviour
             
             if(exploJump == true){
                 Instantiate(FatBenoFX, transform.position + new Vector3(0, -1, 0), transform.rotation);
-                AudioSource.PlayClipAtPoint(FatBenoSound, MainCamera.transform.position);
+                AudioSource.PlayClipAtPoint(FatBenoSound, MainCamera.transform.position + SoundOffset);
             }
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
@@ -263,6 +267,8 @@ public class BeanosPlayer : MonoBehaviour
     private bool jumpSpamBlock;
     private bool groundedBool;
     //COLLISION STATION!
+    [SerializeField] private AudioClip Mush;
+    
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == 3)
@@ -277,6 +283,11 @@ public class BeanosPlayer : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             sendDeathSpider = true;
+        }
+        if(collision.gameObject.tag == "MushroomRage"){
+            AudioSource.PlayClipAtPoint(Mush, MainCamera.transform.position + SoundOffset);
+            rigidbodycomponent.AddForce(-10000,0,0);
+            Debug.Log("MUSH");
         }
     }
     private void OnCollisionExit(Collision collision)

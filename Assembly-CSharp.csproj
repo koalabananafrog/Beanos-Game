@@ -50,14 +50,16 @@
     <UnityVersion>2022.1.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\neore\.vscode\extensions\visualstudiotoolsforunity.vstuc-0.9.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\neore\.vscode\extensions\visualstudiotoolsforunity.vstuc-0.9.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Script\WORMYSC.cs" />
+    <Compile Include="Assets\Script\Data\BeanosData.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+    <Compile Include="Assets\Script\MONEY\BannerAds.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Script\MONEY\AdsInitializer.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\BallGame\EmitParticlesOnBallBounce.cs" />
     <Compile Include="Assets\Script\RespawnMenu.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Script\Data\SaveSystem.cs" />
     <Compile Include="Assets\Script\LevelMenu.cs" />
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickSetterExample.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="Assets\Script\JumpButtonS.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Script\DataBase.cs" />
+    <Compile Include="Assets\Script\Data\LoadData.cs" />
     <Compile Include="Assets\AssetStoreAssets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\Script\CameraScript.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
@@ -90,7 +94,6 @@
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Script\FloatValue.cs" />
     <Compile Include="Assets\Script\PositionFollow1.cs" />
-    <Compile Include="Assets\ButtonNew.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Script\BeanosPlayer.cs" />
@@ -98,7 +101,6 @@
     <Compile Include="Assets\Script\HomingRocket.cs" />
     <Compile Include="Assets\Script\InstantiateLongBeno.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\Script\MONEY\BannerAds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />

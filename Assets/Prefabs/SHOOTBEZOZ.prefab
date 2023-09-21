@@ -104,6 +104,7 @@ MonoBehaviour:
   Mouth: {fileID: 1986422972054049682}
   Aim: {fileID: 4361029379699748172}
   BezozRocket: {fileID: 6463926617881420447, guid: 8df11563335370443a319ed2603b0beb, type: 3}
+  Showsh: {fileID: 8300000, guid: 39dcdd820bfb6e34782c46c8bc89b628, type: 3}
 --- !u!1 &4361029379322030222
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +175,7 @@ MonoBehaviour:
   Mouth: {fileID: 1986422972054049682}
   Aim: {fileID: 4361029379699748172}
   BezozRocket: {fileID: 6463926617881420447, guid: 8df11563335370443a319ed2603b0beb, type: 3}
+  Showsh: {fileID: 8300000, guid: 39dcdd820bfb6e34782c46c8bc89b628, type: 3}
 --- !u!1 &4361029379699748172
 GameObject:
   m_ObjectHideFlags: 0
