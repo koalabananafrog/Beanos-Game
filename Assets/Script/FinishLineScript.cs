@@ -35,6 +35,7 @@ public class FinishLineScript : MonoBehaviour
             TreeCount--;
             InvisableCube.SetBool("TreeGrowing", true);
             beanosScript.makeCollisionFalse = true;
+            beanosScript.freezeX = true;
         }
         launchBall = true;
         cameraScript.FollowTreeGrowth = true;

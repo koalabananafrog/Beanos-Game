@@ -2085,8 +2085,7 @@ MonoBehaviour:
   - {fileID: 2118739405}
   - {fileID: 1816221662}
   - {fileID: 1345133336}
-  POOOP: []
-  activateOnAwake: 1
+  activateOnAwake: 0
   _bannerPosition: 4
   _androidAdUnitId: Banner_Android
   _iOSAdUnitId: Banner_iOS

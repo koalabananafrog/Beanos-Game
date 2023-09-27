@@ -28,7 +28,7 @@ public class BannerAds : MonoBehaviour
 
         // Disable the button until an ad is ready to show:
         // _showBannerButton.interactable = false;
-        _hideBannerButton.interactable = false;
+        // _hideBannerButton.interactable = false;
  
         // Set the banner position:
         Advertisement.Banner.SetPosition(_bannerPosition);
@@ -65,11 +65,11 @@ public class BannerAds : MonoBehaviour
         // Configure the Show Banner button to call the ShowBannerAd() method when clicked:
         
         // Configure the Hide Banner button to call the HideBannerAd() method when clicked:
-        _hideBannerButton.onClick.AddListener(HideBannerAd);
+        // _hideBannerButton.onClick.AddListener(HideBannerAd);
  
-        // Enable both buttons:
-        // _showBannerButton.interactable = true;
-        _hideBannerButton.interactable = true;     
+        // // Enable both buttons:
+        // // _showBannerButton.interactable = true;
+        // _hideBannerButton.interactable = true;     
     }
  
     // Implement code to execute when the load errorCallback event triggers:
@@ -107,9 +107,9 @@ public class BannerAds : MonoBehaviour
  
     void OnDestroy()
     {
-        Clean up the listeners:
-        _loadBannerButton.onClick.RemoveAllListeners();
-        _showBannerButton.onClick.RemoveAllListeners();
-        _hideBannerButton.onClick.RemoveAllListeners();
+        // Clean up the listeners:
+        // _loadBannerButton.onClick.RemoveAllListeners();
+        // _showBannerButton.onClick.RemoveAllListeners();
+        // _hideBannerButton.onClick.RemoveAllListeners();
     }
 }
