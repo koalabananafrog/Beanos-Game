@@ -5,9 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class BeanosData : MonoBehaviour
 {
-    public float coins;
-    public int levelStatus;
-    public BeanosData (DataBase player){
-        coins = player.Coins;
-    }
+    // public float Coins;
+    // public float LevelStatus;
+
+    // public BeanosData(DataBase data)
+    // {
+    //     this.Coins = data.Coins;
+        
+    // }
 }
