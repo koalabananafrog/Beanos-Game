@@ -18,7 +18,6 @@ public class BeanosPlayer : MonoBehaviour
     private bool beanosShallJump;
     public static Vector3 BeanosVelocity;
     private bool sneakBlocker;
-    private bool stabilizing;
     private int beanosGrounds;
     private Vector3 FatBenobeanos;
     private float Jumppower = 350;
@@ -58,6 +57,7 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private float CameraAnglerZ;
     public FixedJoystick joystick;
     public JumpButtonS JumpButtonS;
+
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -157,11 +157,8 @@ public class BeanosPlayer : MonoBehaviour
             float tiltAroundX = 0 * tiltAngle;
             Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
             transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
-            stabilizing = true;
         }
-        else{
-            stabilizing = false;
-        }
+
 
 
 

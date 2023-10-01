@@ -10,7 +10,7 @@ public class FinishLineScript : MonoBehaviour
     [SerializeField] private Animator InvisableCube;
     public BeanosPlayer beanosScript;
     public CameraScript cameraScript;
-    private bool launchBall = false;
+    // private bool launchBall = false;
     private float TreeCount = 1;
     public static int levelStatus;
     private int Q;
@@ -37,7 +37,7 @@ public class FinishLineScript : MonoBehaviour
             beanosScript.makeCollisionFalse = true;
             beanosScript.freezeX = true;
         }
-        launchBall = true;
+        // launchBall = true;
         cameraScript.FollowTreeGrowth = true;
         int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         LevelMenu.levelStatus = nextScene;

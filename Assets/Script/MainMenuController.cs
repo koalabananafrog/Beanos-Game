@@ -9,6 +9,10 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("LevelMenu");
     }
+    public void LoadPlayer(DataBase dataBase){
+        BeanosData data = SaveSystem.LoadPlayer();
+        dataBase.Coins = data.Coins;
+    }
     
     private void bajs(){
         

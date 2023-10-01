@@ -11,6 +11,7 @@ public class DataBase : MonoBehaviour
 
     private void Awake()
     {
+  
   // start of new code
     if (Instance != null)
     {
