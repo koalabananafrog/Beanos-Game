@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class BeanosData : MonoBehaviour
 {
-    public float Coins;
-    public int LevelStatus;
+    public float Coins = 0;
+    public int LevelStatus = 2;
 
     public BeanosData(DataBase data)
     {

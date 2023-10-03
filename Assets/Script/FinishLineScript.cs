@@ -14,8 +14,11 @@ public class FinishLineScript : MonoBehaviour
     private float TreeCount = 1;
     public static int levelStatus;
     private int Q;
-    public static DataBase dataBase;
-
+    public DataBase dataBase;
+    
+    private void Awake(){
+        dataBase = FindObjectOfType<DataBase>();
+    }
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
@@ -24,7 +27,7 @@ public class FinishLineScript : MonoBehaviour
     }
      private void DoVictoryScene()
      {
-        // SaveSystem.SavePlayer(dataBase);
+        SaveSystem.SavePlayer(dataBase);
         Q = SceneManager.GetActiveScene().buildIndex + 1; 
         if(Q>levelStatus){
             levelStatus = Q;

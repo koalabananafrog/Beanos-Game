@@ -82,7 +82,6 @@
     <Compile Include="Assets\Script\JumpButtonS.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Script\DataBase.cs" />
-    <Compile Include="Assets\Script\Data\LoadData.cs" />
     <Compile Include="Assets\AssetStoreAssets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\Script\CameraScript.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />

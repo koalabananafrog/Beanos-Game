@@ -11,16 +11,17 @@ public static class SaveSystem
 
     public static void SavePlayer (DataBase dataBase){
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/CongaRizz";
+        string path = Application.persistentDataPath + "/CongaConga";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         BeanosData data = new BeanosData(dataBase);
+        
         formatter.Serialize(stream, data);
         stream.Close();
     } 
 
     public static BeanosData LoadPlayer(){
-        string path = Application.persistentDataPath + "/CongaRizz";
+        string path = Application.persistentDataPath + "/CongaConga";
         if(File.Exists(path)){
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
