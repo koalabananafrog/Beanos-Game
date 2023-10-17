@@ -16,9 +16,6 @@ public class FinishLineScript : MonoBehaviour
     private int Q;
     public DataBase dataBase;
     
-    private void Awake(){
-        dataBase = FindObjectOfType<DataBase>();
-    }
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
@@ -27,6 +24,7 @@ public class FinishLineScript : MonoBehaviour
     }
      private void DoVictoryScene()
      {
+        dataBase = FindObjectOfType<DataBase>();
         SaveSystem.SavePlayer(dataBase);
         Q = SceneManager.GetActiveScene().buildIndex + 1; 
         if(Q>levelStatus){

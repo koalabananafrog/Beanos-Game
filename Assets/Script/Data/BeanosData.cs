@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BeanosData : MonoBehaviour
+public class BeanosData
 {
     public float Coins = 0;
     public int LevelStatus = 2;
@@ -11,6 +11,6 @@ public class BeanosData : MonoBehaviour
     public BeanosData(DataBase data)
     {
         this.Coins = data.Coins;
-        // this.LevelStatus = LevelMenu.levelStatus;
+        
     }
 }

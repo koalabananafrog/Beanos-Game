@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    public DataBase dataBase;
     public void playGame()
     {
         SceneManager.LoadScene("LevelMenu");
-    }
-    public void LoadPlayer(){
+        dataBase = FindObjectOfType<DataBase>();
         BeanosData data = SaveSystem.LoadPlayer();
         DataBase.Instance.Coins = data.Coins;
+        Debug.Log(SaveSystem.LoadPlayer());
     }
 }
