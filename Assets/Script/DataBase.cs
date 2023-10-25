@@ -8,10 +8,10 @@ public class DataBase : MonoBehaviour
 
     public static DataBase Instance;
     public float Coins;
+    public int LevelStatus = 2;
 
     private void Awake()
     {
-  
   // start of new code
     if (Instance != null)
     {

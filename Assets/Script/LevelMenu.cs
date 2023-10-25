@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 
 public class LevelMenu : MonoBehaviour
-{
-    public static int levelStatus = 2;
-    public void Update(){
-        if(Input.GetKey(KeyCode.K)){
-            Debug.Log("K" + + levelStatus);
-        }
+{   
+
+    private void Awake(){
+        levelStatus = FindObjectOfType<DataBase>().LevelStatus;
     }
+    private int levelStatus;
     
     public void Levelone()
     {

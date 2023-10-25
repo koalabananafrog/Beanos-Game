@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     public DataBase dataBase;
+    private int translatedStatus;
     public void playGame()
     {
         SceneManager.LoadScene("LevelMenu");
+        
+        
         dataBase = FindObjectOfType<DataBase>();
         BeanosData data = SaveSystem.LoadPlayer();
         DataBase.Instance.Coins = data.Coins;
-        Debug.Log(SaveSystem.LoadPlayer());
+        DataBase.Instance.LevelStatus = data.LevelStatus;
+
+        Debug.Log("hi" + data.Coins + "status" + data.LevelStatus);
     }
 }

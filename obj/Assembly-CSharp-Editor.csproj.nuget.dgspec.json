@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj": {}
+    "C:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj": {}
   },
   "projects": {
-    "c:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj": {
+    "C:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj",
+        "projectUniqueName": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj",
         "projectName": "Assembly-CSharp-Editor",
-        "projectPath": "c:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj",
+        "projectPath": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj",
         "packagesPath": "C:\\Users\\neore\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\neore\\Beenos1\\obj\\",
+        "outputPath": "C:\\Users\\neore\\Beenos1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neore\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "c:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj": {
-                "projectPath": "c:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj"
+              "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj": {
+                "projectPath": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj"
               }
             }
           }
@@ -55,14 +55,14 @@
         }
       }
     },
-    "c:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj": {
+    "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "c:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj",
+        "projectPath": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj",
         "packagesPath": "C:\\Users\\neore\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\neore\\Beenos1\\obj\\",
+        "outputPath": "C:\\Users\\neore\\Beenos1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neore\\AppData\\Roaming\\NuGet\\NuGet.Config"

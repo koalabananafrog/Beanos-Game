@@ -252,6 +252,7 @@ public class BeanosPlayer : MonoBehaviour
             if(exploJump == true){
                 Instantiate(FatBenoFX, transform.position + new Vector3(0, -1, 0), transform.rotation);
                 AudioSource.PlayClipAtPoint(FatBenoSound, MainCamera.transform.position + SoundOffset);
+                
             }
         }
         rigidbodycomponent.velocity = new Vector3(horizontalinput, rigidbodycomponent.velocity.y, 0);
@@ -282,8 +283,10 @@ public class BeanosPlayer : MonoBehaviour
             sendDeathSpider = true;
         }
         if(collision.gameObject.tag == "MushroomRage"){
+            Vector3 up = new Vector3(0, 0.7f, 0);
             AudioSource.PlayClipAtPoint(Mush, MainCamera.transform.position + SoundOffset);
             rigidbodycomponent.AddForce(-10000,0,0);
+            transform.position += up;
             Debug.Log("MUSH");
         }
     }
@@ -387,7 +390,7 @@ public class BeanosPlayer : MonoBehaviour
     private void ReverseLongBeanos()
     {
         sneakBlocker = false;
-        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 1);
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 2);
         NewCamera.Smoothness = 0.125f;
         transform.localScale = Normalbeanos;
         Speed = Speed --;
@@ -445,7 +448,7 @@ public class BeanosPlayer : MonoBehaviour
         transform.localScale = Normalbeanos;
         Speed = Speed - 2;
         Rightturnspeed = Rightturnspeed -10;
-        Leftturnspeed = Rightturnspeed +10;
+        Leftturnspeed = Leftturnspeed +10;
         sneakBlocker = false;
         Jumppower = Jumppower / 3;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 10);   

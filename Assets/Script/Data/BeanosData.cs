@@ -7,10 +7,10 @@ public class BeanosData
 {
     public float Coins = 0;
     public int LevelStatus = 2;
-
+    
     public BeanosData(DataBase data)
     {
         this.Coins = data.Coins;
-        
+        this.LevelStatus = data.LevelStatus;
     }
 }
