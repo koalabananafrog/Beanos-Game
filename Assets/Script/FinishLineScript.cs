@@ -15,7 +15,6 @@ public class FinishLineScript : MonoBehaviour
     public static int levelStatus;
     private int Q;
     public DataBase dataBase;
-    public int finishLineScriptLevelStatus = 2;
      private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 11){
             DoVictoryScene();
@@ -25,11 +24,12 @@ public class FinishLineScript : MonoBehaviour
      private void DoVictoryScene()
      {
         dataBase = FindObjectOfType<DataBase>();
-
+        levelStatus = dataBase.LevelStatus;
 
         Q = SceneManager.GetActiveScene().buildIndex + 1; 
         if(Q>levelStatus){
             levelStatus = Q;
+            dataBase.LevelStatus = levelStatus;
         }
         if (TreeCount == 1)
         {
@@ -41,12 +41,8 @@ public class FinishLineScript : MonoBehaviour
         }
         // launchBall = true;
         cameraScript.FollowTreeGrowth = true;
-        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-        dataBase.LevelStatus = nextScene;
         Debug.Log(dataBase.LevelStatus + "status");
 
-
-          
         SaveSystem.SavePlayer(dataBase);
      }
 
