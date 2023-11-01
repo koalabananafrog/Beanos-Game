@@ -52,6 +52,7 @@ public class FinishLineScript : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
         int nextSceneIndex = currentScene.buildIndex + 1;
+        FindObjectOfType<InterstitialAd>().ShowAd();
         SceneManager.LoadScene(nextSceneIndex);
      }
 

@@ -5,22 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class RespawnMenu : MonoBehaviour
 {
-    
-    private void Update()
-    {
-       
-        
-
-        
-    }
-
-
-
+    private int Rando;
     public void Respawn()
     {
         DataBase dataBase = FindObjectOfType<DataBase>();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SaveSystem.SavePlayer(dataBase);
+        Rando = Random.Range(0, 3);
+        if(Rando <= 1){
+            FindObjectOfType<InterstitialAd>().ShowAd();
+        }
+        Debug.Log(Rando);
     }
 
     public void Menu()

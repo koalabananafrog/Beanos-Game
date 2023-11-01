@@ -63,7 +63,6 @@
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Script\Particles.cs" />
     <Compile Include="Assets\Script\MainMenuController.cs" />
-    <Compile Include="Assets\Script\BeanosAudioManager.cs" />
     <Compile Include="Assets\Script\FatBenoRotation.cs" />
     <Compile Include="Assets\Script\Cool\BezozShoot.cs" />
     <Compile Include="Assets\Script\FinishLineScript.cs" />
@@ -95,10 +94,12 @@
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Script\BeanosPlayer.cs" />
-    <Compile Include="Assets\Script\BeanosEffects.cs" />
+    <Compile Include="Assets\Script\MONEY\AdsInitializer.cs" />
     <Compile Include="Assets\Script\HomingRocket.cs" />
     <Compile Include="Assets\Script\InstantiateLongBeno.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Script\MONEY\BannerAd.cs" />
+    <Compile Include="Assets\Script\MONEY\InterstitialAd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />

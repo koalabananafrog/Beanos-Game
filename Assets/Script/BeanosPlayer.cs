@@ -57,7 +57,6 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private float CameraAnglerZ;
     public FixedJoystick joystick;
     public JumpButtonS JumpButtonS;
-
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -69,9 +68,7 @@ public class BeanosPlayer : MonoBehaviour
         Sneakingbeanos = new Vector3(0.7f, 0.6f, 0.7f);
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
-        FatBenobeanos = new Vector3(2, 1, 2.2f);
-
-        
+        FatBenobeanos = new Vector3(2, 1, 2.2f);      
     }
     private bool joystickDown;
     private bool joystickUp;

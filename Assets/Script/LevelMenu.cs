@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 using UnityEngine.SceneManagement;
 
 
 public class LevelMenu : MonoBehaviour
 {   
-
+    private float Rando;
     private void Awake(){
         levelStatus = FindObjectOfType<DataBase>().LevelStatus;
     }
     private int levelStatus;
-    
+
     public void Levelone()
     {
         if(levelStatus >= 2){
@@ -21,6 +22,7 @@ public class LevelMenu : MonoBehaviour
             Debug.Log("false");
             Debug.Log(levelStatus + "Level");
         }
+        Advertisement.Banner.Hide();
     }
     public void Leveltwo()
     {
@@ -30,6 +32,8 @@ public class LevelMenu : MonoBehaviour
         else{
             Debug.Log(levelStatus + "status");
         }
+        Advertisement.Banner.Hide();
+        FindObjectOfType<InterstitialAd>().ShowAd();
     }
     public void LevelThree()
     {
@@ -38,6 +42,8 @@ public class LevelMenu : MonoBehaviour
         }else{
             Debug.Log(levelStatus + "status");
         }
+        Advertisement.Banner.Hide();
+        FindObjectOfType<InterstitialAd>().ShowAd();
     }
     public void LevelFour()
     {
@@ -46,6 +52,8 @@ public class LevelMenu : MonoBehaviour
         }else{
             Debug.Log(levelStatus + "status");
         }
+        Advertisement.Banner.Hide();
+        FindObjectOfType<InterstitialAd>().ShowAd();
     }
     public void LevelFive()
     {
@@ -54,6 +62,8 @@ public class LevelMenu : MonoBehaviour
         }else{
             Debug.Log(levelStatus + "status");
         }
+        Advertisement.Banner.Hide();
+        FindObjectOfType<InterstitialAd>().ShowAd();
     }
     public void LevelSix()
     {
@@ -62,5 +72,7 @@ public class LevelMenu : MonoBehaviour
         }else{
             Debug.Log(levelStatus + "status");
         }
+        Advertisement.Banner.Hide();
+        FindObjectOfType<InterstitialAd>().ShowAd();
     }
 }
