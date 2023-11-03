@@ -57,6 +57,7 @@
     <Compile Include="Assets\Script\WORMYSC.cs" />
     <Compile Include="Assets\Script\Data\BeanosData.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Script\MONEY\InterstitialAd.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\Data\SaveSystem.cs" />
     <Compile Include="Assets\Script\LevelMenu.cs" />
+    <Compile Include="Assets\Script\MONEY\RewardedAds.cs" />
     <Compile Include="Assets\Script\Cool\LockedLevel.cs" />
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickSetterExample.cs" />
@@ -95,11 +97,10 @@
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Script\BeanosPlayer.cs" />
     <Compile Include="Assets\Script\MONEY\AdsInitializer.cs" />
+    <Compile Include="Assets\Script\MONEY\BannerAd.cs" />
     <Compile Include="Assets\Script\HomingRocket.cs" />
     <Compile Include="Assets\Script\InstantiateLongBeno.cs" />
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\Script\MONEY\BannerAd.cs" />
-    <Compile Include="Assets\Script\MONEY\InterstitialAd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -15,7 +15,6 @@ public class RespawnMenu : MonoBehaviour
         if(Rando <= 1){
             FindObjectOfType<InterstitialAd>().ShowAd();
         }
-        Debug.Log(Rando);
     }
 
     public void Menu()

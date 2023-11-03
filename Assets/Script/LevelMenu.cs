@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {   
-    private float Rando;
     private void Awake(){
         levelStatus = FindObjectOfType<DataBase>().LevelStatus;
     }

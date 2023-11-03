@@ -42,6 +42,7 @@ public class BeanosPlayer : MonoBehaviour
     private bool sendDeathSpider;
     private bool sneaking;
     [SerializeField] private GameObject RespawnMenu;
+    [SerializeField] private GameObject SmashMenu;
     private bool beanosCanJump;
     private float horizontalinput;
     private Rigidbody rigidbodycomponent;
@@ -57,6 +58,7 @@ public class BeanosPlayer : MonoBehaviour
     [SerializeField] private float CameraAnglerZ;
     public FixedJoystick joystick;
     public JumpButtonS JumpButtonS;
+    
     void Start()
     {
         MainCamera = FindObjectOfType<Camera>();
@@ -68,13 +70,14 @@ public class BeanosPlayer : MonoBehaviour
         Sneakingbeanos = new Vector3(0.7f, 0.6f, 0.7f);
         Normalbeanos = new Vector3(1, 1, 1);
         deadBeanos = new Vector3(1.5f, 0.4f, 1.5f);
-        FatBenobeanos = new Vector3(2, 1, 2.2f);      
+        FatBenobeanos = new Vector3(2, 1, 2.2f);     
     }
     private bool joystickDown;
     private bool joystickUp;
     private bool theresPossibleJump;
     private bool jumped;
     private bool airborn;
+    private int Rando;
 
     public GameObject LongBeanosButton;
     // Update is called once per frame
@@ -189,12 +192,18 @@ public class BeanosPlayer : MonoBehaviour
 
     //    || joystick.Vertical > -0.1 && sneaking
         // Death void detection
-        if(dieBeanos == true)
+        if(dieBeanos == true && !cantDie)
         {
             RespawnMenu.SetActive(true);
+            Rando = UnityEngine.Random.Range(0, 3);
+            if(Rando >= 1){
+                SmashMenu.SetActive(true);
+            }
             Dead = true;
             transform.localScale = deadBeanos;
             rigidbodycomponent.constraints = RigidbodyConstraints.FreezePosition;
+        }else if(dieBeanos && cantDie){
+            dieBeanos = false;
         }
         if (sendDeathSpider == true){
             spider.gameObject.SetActive(true);
@@ -277,7 +286,10 @@ public class BeanosPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 6)
         {
+            if(!cantDie){
             sendDeathSpider = true;
+            }
+            
         }
         if(collision.gameObject.tag == "MushroomRage"){
             Vector3 up = new Vector3(0, 0.7f, 0);
@@ -305,6 +317,7 @@ public class BeanosPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.layer == COIN)
         {
             Destroy(other.gameObject);
@@ -452,6 +465,48 @@ public class BeanosPlayer : MonoBehaviour
         exploJump = false;
         NewCamera.Smoothness = 0.125f;
     }   
+    [SerializeField] private AudioClip SMASHsound; 
+    public void SMASH(){
+        RespawnMenu.SetActive(false);
+        SmashMenu.SetActive(false);
+        Instantiate(Longbenopickupeffect, transform.position, transform.rotation);
+        AudioSource.PlayClipAtPoint(SMASHsound, MainCamera.transform.position + new Vector3(0, 0, 0));
+        StartCoroutine(SMASHmaker());
+    }
+    IEnumerator SMASHmaker()  //  <-  its a standalone method
+    {
+        Debug.Log("V1");
+        Invincible();
+        yield return new WaitForSeconds(5);
+        Debug.Log("V2");
+        UnInvincible();
+        yield return new WaitForSeconds(5);
+        Debug.Log("V3");
+        cantDie = false;
+    }
+    private bool cantDie = false;
+    private Vector3 SMASHpoint = new Vector3 (0, 15, 0);
+    private Vector3 SMASHbeanos = new Vector3 (2, 2, 2);
+    private void Invincible(){
+        if (sendDeathSpider){
+            spider.gameObject.SetActive(false);
+            sendDeathSpider = false;
+        }
+        cantDie = true;
+        Dead = false;
+        rigidbodycomponent.constraints = RigidbodyConstraints.None;
+        transform.position =transform.position + SMASHpoint;
+        transform.localScale = SMASHbeanos;
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -10);
+        Jumppower = Jumppower * 3;
+        NewCamera.Smoothness = 0.2f;
+    }
+    private void UnInvincible(){
+        transform.localScale = Normalbeanos;
+        NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 10);   
+        Jumppower = Jumppower / 3;
+        NewCamera.Smoothness = 0.125f;
+    }
     private bool jumpButton;
     // public void JumpButton(){
     //     jumpButton = true;
