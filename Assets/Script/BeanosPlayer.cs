@@ -288,6 +288,11 @@ public class BeanosPlayer : MonoBehaviour
         {
             if(!cantDie){
             sendDeathSpider = true;
+            }else{
+                if(beanosGrounds == 0){
+                groundedBool = true;
+            }
+            beanosGrounds++;
             }
             
         }
@@ -477,10 +482,10 @@ public class BeanosPlayer : MonoBehaviour
     {
         Debug.Log("V1");
         Invincible();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         Debug.Log("V2");
         UnInvincible();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         Debug.Log("V3");
         cantDie = false;
     }
@@ -495,7 +500,8 @@ public class BeanosPlayer : MonoBehaviour
         cantDie = true;
         Dead = false;
         rigidbodycomponent.constraints = RigidbodyConstraints.None;
-        transform.position =transform.position + SMASHpoint;
+        rigidbodycomponent.constraints = RigidbodyConstraints.FreezePositionZ;
+        transform.position = transform.position + SMASHpoint;
         transform.localScale = SMASHbeanos;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -10);
         Jumppower = Jumppower * 3;

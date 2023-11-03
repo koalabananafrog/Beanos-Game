@@ -43,7 +43,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
 
-            Advertisement.Load(_adUnitId, this);
+            // Advertisement.Load(_adUnitId, this);
         }
     }
 

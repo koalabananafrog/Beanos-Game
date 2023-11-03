@@ -2352,7 +2352,7 @@ MonoBehaviour:
   WayPoints:
   - {fileID: 1668463593397321088}
   - {fileID: 250731039195966086}
-  normalSpeed: 3
+  normalSpeed: 10
   fastSpeed: 50
   FaceWaiponts: 1
   ChangeSpeed: 1
