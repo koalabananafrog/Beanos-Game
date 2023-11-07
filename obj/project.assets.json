@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.0": {}
+    ".NETStandard,Version=v2.0": {
+      "Assembly-CSharp/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Assembly-CSharp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assembly-CSharp.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Assembly-CSharp/1.0.0": {
+      "type": "project",
+      "path": "Assembly-CSharp.csproj",
+      "msbuildProject": "Assembly-CSharp.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.0": []
+    ".NETStandard,Version=v2.0": [
+      "Assembly-CSharp >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\neore\\.nuget\\packages\\": {}
@@ -13,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj",
-      "projectName": "Assembly-CSharp",
-      "projectPath": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj",
+      "projectName": "Assembly-CSharp-Editor",
+      "projectPath": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp-Editor.csproj",
       "packagesPath": "C:\\Users\\neore\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\neore\\Beenos1\\obj\\",
       "projectStyle": "PackageReference",
@@ -31,7 +50,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj": {
+              "projectPath": "C:\\Users\\neore\\Beenos1\\Assembly-CSharp.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
