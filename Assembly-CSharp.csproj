@@ -74,7 +74,6 @@
     <Compile Include="Assets\AssetStoreAssets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\Data\SaveSystem.cs" />
     <Compile Include="Assets\Script\LevelMenu.cs" />
-    <Compile Include="Assets\Script\MONEY\RewardedAds.cs" />
     <Compile Include="Assets\Script\Cool\LockedLevel.cs" />
     <Compile Include="Assets\AssetStoreAssets\ChallengeAssets\ChallengeResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
     <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Examples\JoystickSetterExample.cs" />

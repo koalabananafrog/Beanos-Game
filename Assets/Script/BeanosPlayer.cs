@@ -288,13 +288,11 @@ public class BeanosPlayer : MonoBehaviour
         {
             if(!cantDie){
             sendDeathSpider = true;
-            }else{
-                if(beanosGrounds == 0){
+            }
+            if(beanosGrounds == 0){
                 groundedBool = true;
             }
-            beanosGrounds++;
-            }
-            
+            beanosGrounds++;        
         }
         if(collision.gameObject.tag == "MushroomRage"){
             Vector3 up = new Vector3(0, 0.7f, 0);
@@ -307,6 +305,14 @@ public class BeanosPlayer : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if(collision.gameObject.layer == 3)
+        {
+            beanosGrounds--;
+            jumpSpamBlock = true;
+            if(beanosGrounds == 0){
+                groundedBool = false;
+            }
+        }
+        if(collision.gameObject.layer == 6)
         {
             beanosGrounds--;
             jumpSpamBlock = true;
@@ -504,13 +510,13 @@ public class BeanosPlayer : MonoBehaviour
         transform.position = transform.position + SMASHpoint;
         transform.localScale = SMASHbeanos;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -10);
-        Jumppower = Jumppower * 3;
+        Jumppower = Jumppower * 2.5f;
         NewCamera.Smoothness = 0.2f;
     }
     private void UnInvincible(){
         transform.localScale = Normalbeanos;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 10);   
-        Jumppower = Jumppower / 3;
+        Jumppower = Jumppower / 2.5f;
         NewCamera.Smoothness = 0.125f;
     }
     private bool jumpButton;
