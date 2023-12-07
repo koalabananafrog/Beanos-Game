@@ -510,13 +510,13 @@ public class BeanosPlayer : MonoBehaviour
         transform.position = transform.position + SMASHpoint;
         transform.localScale = SMASHbeanos;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, -10);
-        Jumppower = Jumppower * 2.5f;
+        Jumppower = Jumppower * 2f;
         NewCamera.Smoothness = 0.2f;
     }
     private void UnInvincible(){
         transform.localScale = Normalbeanos;
         NewCamera.offset = NewCamera.offset + new Vector3(0, 0, 10);   
-        Jumppower = Jumppower / 2.5f;
+        Jumppower = Jumppower / 2f;
         NewCamera.Smoothness = 0.125f;
     }
     private bool jumpButton;
