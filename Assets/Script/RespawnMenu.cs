@@ -5,16 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class RespawnMenu : MonoBehaviour
 {
-    private int Rando;
+    [SerializeField] public GameObject nointernet;
     public void Respawn()
     {
         DataBase dataBase = FindObjectOfType<DataBase>();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SaveSystem.SavePlayer(dataBase);
-        Rando = Random.Range(0, 3);
-        if(Rando <= 1){
-            FindObjectOfType<InterstitialAd>().ShowAd();
-        }
     }
 
     public void Menu()

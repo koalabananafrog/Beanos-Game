@@ -7,22 +7,21 @@ TagManager:
   - Coineffect
   - MushroomRage
   - CameraAngler
-  - WATERPULSE
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - JumpAbleObj
+  - JumpABLE
   - Water
   - UI
-  - SendDeathSpider
-  - Coins
-  - LongBeno
-  - FatBeno
-  - StandardBeano
-  - PlayerBeno
-  - FinishlineHitBox
-  - DieBeanos
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -44,7 +43,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: New Layer 1
-    uniqueID: 3763578537
     locked: 0

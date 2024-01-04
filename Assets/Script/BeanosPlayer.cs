@@ -94,32 +94,14 @@ public class BeanosPlayer : MonoBehaviour
         if(coins >= 11){
             LongBeanosButton.SetActive(true);
         }
-        // Joystick vertical
-        if(joystick.Vertical > 0.8){
-            joystickUp = true;
-        }
-        else{
-            joystickUp = false;
-        }
-        if(joystick.Vertical < -0.6){
-            joystickDown = true;
-        }
-        else{
-            joystickDown = false;
-        }
         if(Input.GetKey(KeyCode.K)){
             Debug.Log("Coins" + coins);
         }
 
 
-        //Joystick JumpButton Detection
-        if(JumpButtonS.buttonPressed){
-            jumpButton = true;
-        }else{
-            jumpButton = false;
-        }
 
-        // Joystick Jump Spam Block
+
+        // Jump Spam Block
         if(!groundedBool){
             airborn = true;
         }
@@ -152,7 +134,7 @@ public class BeanosPlayer : MonoBehaviour
 
 
         // Stabilize
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || joystickUp){
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
             float tiltAroundZ = 0 * tiltAngle;
             float tiltAroundX = 0 * tiltAngle;
             Quaternion target = Quaternion.Euler(tiltAroundX, -270, tiltAroundZ);
@@ -163,19 +145,19 @@ public class BeanosPlayer : MonoBehaviour
 
 
         // Move right
-        if (horizontalinput > 0.3f || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(new Vector3(transform.rotation.x + Rightturnspeed, 0, 0) * Time.deltaTime);
         }
         // Move left
-        if (horizontalinput < -0.3f || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(new Vector3(transform.rotation.x + Leftturnspeed, 0, 0) * Time.deltaTime);
         }
 
 
         // Sneak down
-        if ( joystickDown && !sneaking && !sneakBlocker) {
+        if ( Input.GetKey(KeyCode.S) && !sneaking && !sneakBlocker) {
             transform.localScale = Sneakingbeanos;
             Speed = 3.5f;
             sneaking = true; 
@@ -183,7 +165,7 @@ public class BeanosPlayer : MonoBehaviour
         // Input.GetKey(KeyCode.S) && !sneaking && !sneakBlocker ||
         // Sneak up
         
-        if (!joystickDown && sneaking){
+        if (!Input.GetKey(KeyCode.S) && sneaking){
             transform.localScale = Normalbeanos;
             Speed = 2.5f;
             sneaking = false; 
@@ -213,7 +195,7 @@ public class BeanosPlayer : MonoBehaviour
         
         
         //private bool heyDontSpamJump;
-        if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true || jumpButton && beanosCanJump == true && !jumpSpamBlock)
+        if (Input.GetKeyDown(KeyCode.Space) && beanosCanJump == true && !jumpSpamBlock)
         {      
              beanosShallJump = true;
              jumped = true;
@@ -241,8 +223,6 @@ public class BeanosPlayer : MonoBehaviour
 
          if(Input.GetAxis("Horizontal") !=0){
             horizontalinput = Input.GetAxis("Horizontal") * Speed;
-        }else{
-            horizontalinput = joystick.Horizontal * Speed;
         }
         if(makeCollisionFalse == true){
             rigidbodycomponent.detectCollisions = false;
