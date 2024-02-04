@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RespawnMenu : MonoBehaviour
-{
-    [SerializeField] public GameObject nointernet;
-    public void Respawn()
+{    public void Respawn()
     {
         DataBase dataBase = FindObjectOfType<DataBase>();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -18,5 +16,8 @@ public class RespawnMenu : MonoBehaviour
         DataBase dataBase = FindObjectOfType<DataBase>();
         SceneManager.LoadScene("MenuAlpha1");
         SaveSystem.SavePlayer(dataBase);
+    }
+    public void Quit(){
+        Application.Quit();
     }
 }

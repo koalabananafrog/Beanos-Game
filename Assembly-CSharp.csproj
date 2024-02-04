@@ -79,6 +79,9 @@
      <Compile Include="Assets\Prefabs\Joysticks\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Script\PositionFollow1.cs" />
      <Compile Include="Assets\AssetStoreAssets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\Script\Cool\BezozShoot.cs" />
+     <Compile Include="Assets\Script\Cool\LockedLevel.cs" />
+     <Compile Include="Assets\Script\Boring\PrivacyPolicy.cs" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\AssetStoreAssets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
