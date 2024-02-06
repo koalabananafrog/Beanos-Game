@@ -177,10 +177,6 @@ public class BeanosPlayer : MonoBehaviour
         if(dieBeanos == true && !cantDie)
         {
             RespawnMenu.SetActive(true);
-            Rando = UnityEngine.Random.Range(0, 3);
-            if(Rando >= 1){
-                SmashMenu.SetActive(true);
-            }
             Dead = true;
             transform.localScale = deadBeanos;
             rigidbodycomponent.constraints = RigidbodyConstraints.FreezePosition;
@@ -304,12 +300,15 @@ public class BeanosPlayer : MonoBehaviour
     
     public static int LONGBEANOS = 8;
     public static int COIN = 7;
-    public static int FatBeno = 9;
+    public static int FatBeno = 9; 
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.layer == COIN)
+        if(other.gameObject.tag == "Zregulator")
+        if (other.gameObject.layer == COIN){
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 103.11f);
+            Debug.Log("aAAAAAAAAAAAAAAAAAAA");
+        }
         {
             Destroy(other.gameObject);
             FindObjectOfType<DataBase>().Coins++;
