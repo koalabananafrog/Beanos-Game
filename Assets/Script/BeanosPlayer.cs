@@ -304,11 +304,12 @@ public class BeanosPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Zregulator")
-        if (other.gameObject.layer == COIN){
+        if(other.gameObject.tag == "ZRegulator")
+        {
             gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 103.11f);
             Debug.Log("aAAAAAAAAAAAAAAAAAAA");
         }
+        if (other.gameObject.layer == COIN)
         {
             Destroy(other.gameObject);
             FindObjectOfType<DataBase>().Coins++;
